@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+
+{% load static %}
+<html lang="pt-br"> <!--Trecho do código em html dentro dessas tags,usar lang=”PT-BR” dentro da tag <html> para definir idioma -->
+    <head><!--Cabeçalho da página -->
+        <title>Mundo Imaginario</title><!-- -->
+        <meta charset="UTF-8"><!--Define o padrão de escrita para ask2 (idiomas latinos com acentuação)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <link rel="stylesheet" href="{% static 'css/configura.css '%}"><!-- aplica as configurações css criadas no arquivo descrito na tag(não precisa fechar / tag link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    </head>
+    <body><!-- -->
+        <header><!--Cabeçalho do corpo -->
+            <div><h1>Mundo Imaginario - O Musical!</h1></div><!--Titulo -->
+        </header>
+        <nav><!--Barra/container/caixa de navegação -->
+            <div class="menu">
+                <button class="botao"><a href="index.html" target="centro">Home</a></button><!--cria um botao para armazenar sub menu --></div>
+            
+                <div class="menu"><button class="botao"><a href="quemSomos.html" target="centro">Quem Somos</a></button></div>
+            
+                <div class="menu"> <button class="botao">Espetaculos</button>
+                <div class="submenu">
+                    <a href="muImag.html" target="centro">O Mundo Imaginario</a>
+                    <a href="outrosEspetaculos.html" target="centro">Outros Espetaculos</a>
+                </div></div>
+
+           <div class="menu"> <button class="botao">Galerias</button>
+            <div class="submenu">
+                <a href="midia.html" target="centro">Balaio D'Arte na midia</a>
+                <a href="teatro.html" target="centro">Balaio D'Arte no teatro</a>
+                <a href="escola.html" target="centro">Balaio D'Arte na escola</a></div>
+            </div>
+
+           <div class="menu"> <button class="botao"><a href="agenda.html" target="centro">Agenda</a></button></div>
+
+           <div class="menu"> <button class="botao"><a href="contatos.html" target="centro">Contatos</a></button></div>
+           
+           <div class="menu"> <button class="botao"><a href="blog.html" target="centro">Blog</a></button></div>
+        </nav>
+
+        <main><!--Caixa Principal -->
+            <iframe src="abertura.html" name="centro"></iframe><!--criar um conteudo variavel dentro de um container-->
+        </main>
+        <footer>Desenvolvido por Michel Teixeira da Silva, 2024</footer><!-- Rodapé da pagina -->
+
+    </body>
+</html>
