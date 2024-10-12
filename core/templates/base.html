@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html> 
+
+<html lang="pt-br"> <!--Trecho do código em html dentro dessas tags,usar lang=”PT-BR” dentro da tag <html> para definir idioma -->
+    <head><!--Cabeçalho da página -->
+        <title>Mundo Imaginario</title><!-- -->
+        <meta charset="UTF-8"><!--Define o padrão de escrita para ask2 (idiomas latinos com acentuação)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="{% static 'css/configura.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    
+    </head>
+    <body><!-- -->
+        <header><!--Cabeçalho do corpo -->
+            <div><h1>Mundo Imaginario - O Musical!</h1></div><!--Titulo -->
+        </header>
+        <nav><!--Barra/container/caixa de navegação -->
+            <div class="menu">
+                <a href="{% url 'home' %}">Home</a><!--cria um botao para armazenar sub menu --></div>
+            
+                <div class="menu"><a href="{% url 'quem_somos' %}">Quem Somos</a></div>
+            
+                <div class="menu"> <button class="botao">Espetaculos</button>
+                <div class="submenu">
+                    <a href="{% url 'mundo_imaginario' %}">O Mundo Imaginario</a>
+                    <a href="{% url 'outros_espetaculos' %}">Outros Espetaculos</a>
+                </div></div>
+
+           <div class="menu"> <button class="botao">Galerias</button>
+            <div class="submenu">
+                <a href="{% url 'midia' %}">Balaio D'Arte na midia</a>
+                <a href="{% url 'teatro' %}">Balaio D'Arte no teatro</a>
+                <a href="{% url 'escola' %}">Balaio D'Arte na escola</a></div>
+            </div>
+
+           <div class="menu"> <a href="{% url 'agenda' %}">Agenda</a></div>
+
+           <div class="menu"> <a href="{% url 'contato' %}">Contatos</a></div>
+           
+           <div class="menu"> <a href="{% url 'blog' %}">Blog</a></div>
+        </nav>
+
+        <main><!--Caixa Principal -->
+        {% block content %}
+
+        {% endblock %}
+        </main>
+
+        <footer>Desenvolvido por Michel Teixeira da Silva, 2024</footer><!-- Rodapé da pagina -->
+
+    </body>
+</html>

@@ -18,9 +18,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from web.views import home
+from web import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home), #parametros: nome da url e função importada da view
+    path('home/', v.home, name='home'),
+    path('quem_somos/', v.qs_view, name='quem_somos'), #parametros: nome da url e função importada da view
+    path('mundo_imaginario/', v.mu_i_view, name='mundo_imaginario'),
+    path('outros_espetaculos/', v.oe_view, name='outros_espetaculos'),
+    path('midia/', v.midia_view, name='midia'),
+    path('teatro/', v.teatro_view, name='teatro'),
+    path('escola/', v.escola_view, name='escola'),
+    path('agenda/', v.agenda_view, name='agenda'),
+    path('contato/', v.contato_view, name='contato'),
+    path('blog/', v.blog_view, name='blog'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
