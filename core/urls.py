@@ -22,7 +22,7 @@ from web import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', v.home, name='home'),
+    path('', v.home, name='home'),
     path('quem_somos/', v.qs_view, name='quem_somos'), #parametros: nome da url e função importada da view
     path('mundo_imaginario/', v.mu_i_view, name='mundo_imaginario'),
     path('outros_espetaculos/', v.oe_view, name='outros_espetaculos'),
