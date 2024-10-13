@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from web.models import Agenda
 # Create your views here.
 
 
@@ -32,7 +32,10 @@ def escola_view(request):
 
 
 def agenda_view(request):
-    return render(request, 'agenda.html')
+    agenda = Agenda.objects.all()
+    return render(request,
+     'agenda.html',
+     {'agenda': agenda})
 
 
 def contato_view(request):
