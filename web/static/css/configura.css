@@ -5,7 +5,6 @@ header{/* Efeitos do cabeçalho*/
     padding-left: 5%;/*Espaço entre o texto e a borda esquerda definido em pixels ou percentual*/
     box-sizing: border-box;/* impede que o tamnho da caixa mude quando se defide espaços nas bordas*/
     font-family: 'Pacifico', arial; /* Aplica fonte importada */
-    font-family: 'Pacifico', arial;
     font-size:30px
 
 }
@@ -26,6 +25,12 @@ main{/*Efeitos na caixa principal */
     color: blue;
 
 }
+
+button.botao{
+    font-family: 'Pacifico', cursive;
+
+}
+
 footer{/*efeitos no rodapé */
     width: 100%;
     height: 20px;

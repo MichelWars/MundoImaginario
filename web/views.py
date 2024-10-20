@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from web.models import Agenda
+from web.models import Agenda, LocalFotos, Fotos
 # Create your views here.
 
 
@@ -20,15 +20,18 @@ def oe_view(request):
     return render(request, 'outrosEspetaculos.html')
 
 def midia_view(request):
-    return render(request, 'midia.html')    
+    midia = Fotos.objects.filter(local=2) 
+    return render(request, 'midia.html', {'midia': midia})    
 
 
 def teatro_view(request):
-    return render(request, 'teatro.html')
+    teatro = Fotos.objects.filter(local=3) 
+    return render(request, 'teatro.html', {'teatro': teatro})
 
 
 def escola_view(request):
-    return render(request, 'escola.html')
+    escola = Fotos.objects.filter(local=1) 
+    return render(request, 'escola.html', {'escola': escola})
 
 
 def agenda_view(request):
