@@ -26,10 +26,7 @@ main{/*Efeitos na caixa principal */
 
 }
 
-button.botao{
-    font-family: 'Pacifico', cursive;
 
-}
 
 footer{/*efeitos no rodapé */
     width: 100%;
@@ -84,7 +81,7 @@ button.botao{
     background-color: #333333;
     color: white;
     border:none;
-    font-weight:bold;
+    font-family: 'Pacifico', cursive;
 }
 
 button.botao, div.submenu{
