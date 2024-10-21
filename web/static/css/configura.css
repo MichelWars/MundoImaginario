@@ -15,12 +15,14 @@ nav{/*Efeitos da caixa de navegação */
     box-sizing: border-box;
     font-family: 'Pacifico', cursive;
     display: flex;/*cria um display flexivel para usar a função align-items*/
-    align-items: center/* define o espaço entre os itens (centralziado)*/
+    align-items: center;/* define o espaço entre os itens (centralziado)*/
+    z-index:10;
 
 }
 main{/*Efeitos na caixa principal */
     width: 100%;
-    height: 400px;
+    min-height: 400px;
+    max-height: auto;
     background-color: grey;
     color: blue;
 
@@ -43,11 +45,15 @@ div.submenu{
     position:absolute; /*abre o submenu sem expandir o container nav*/
     background-color: grey;
     font-family: 'Pacifico', cursive;
+    z-index:10;
 
 }
 
 div.menu:hover div.submenu{
     display: block; /*Exibe o item que esta oculto quando passar o mouse por cima*/
+    z-index:10;
+    
+
 }
 
 div.submenu a {
@@ -56,16 +62,20 @@ div.submenu a {
     text-decoration: none;
     padding: 5px 10px;
     font-size:20px;
-    box-shadow:8px 8px 10px 5px rgba(0,0,0,0.7)
+    box-shadow:8px 8px 10px 5px rgba(0,0,0,0.7);
+    z-index:10;
 }
 div.submenu a:hover{
     background-color:blueviolet;
     font-size:20px;
+    z-index:10;
+
 
 }
 div.menu a:hover{
     background-color:blueviolet;
     font-size:20px;
+    z-index:10;
 
 }
 div.menu a {
@@ -74,6 +84,8 @@ div.menu a {
     text-decoration: none;
     padding: 5px 10px;
     font-size:20px;
+    z-index:10;
+    
 }
 
 
@@ -87,8 +99,17 @@ button.botao{
 button.botao, div.submenu{
     min-width: 120px;
     font-size:20px;
+    z-index:10;
+
 }
 
 div.menu{
     display: inline-block;
+    z-index: index 10;
+
+}
+
+div.submenu{
+    position: absolute;
+    z-index:10;
 }
