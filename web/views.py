@@ -35,7 +35,7 @@ def escola_view(request):
 
 
 def agenda_view(request):
-    agenda = Agenda.objects.all()
+    agenda = Agenda.objects.all().order_by('data')
     return render(request,
      'agenda.html',
      {'agenda': agenda})
