@@ -24,7 +24,7 @@ github actions
 material icon theme
 portuguese brazil
 dracula at nigth(tema dark)
-sqlviewer
+SQLite Viewer
 codeium (ia de preenchimento)
 
 
@@ -40,6 +40,6 @@ depois abra o terminal e digite python -m pip install -r requirements.txt (para 
 python -m venv venv (criar o ambiente virtual)
 
 .\venv\Scripts\activate (para ativar a venv)
-(caso não rode é necessario rodar o comando "" no power shell como administrador)
+(caso não rode é necessario rodar o comando Set-ExecutionPolicy Unrestricted no power shell como administrador)
 
 python manage.py runserver (executar o servidor)
