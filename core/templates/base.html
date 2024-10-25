@@ -48,7 +48,40 @@
         {% endblock %}
         </main>
 
-        <footer>Copyright © 2024 | Balaio D'arte</footer><!-- Rodapé da pagina -->
+        <footer class="footer-container">
+            <div>© 2024 | Balaio D'arte</div>
+            
+            <div class="footer-section">
+                <span>Redes Sociais:</span>
+                <a href="https://www.facebook.com/omundoimaginariooficial/" target="_blank">
+                    <img src="{% static 'img/face.png' %}" alt="Facebook Icon" width="20" height="20">
+                </a>
+                <a href="https://www.instagram.com/omundoimaginariooficial/" target="_blank">
+                    <img src="{% static 'img/insta.jfif' %}" alt="Instagram Icon" width="20" height="20">
+                </a>
+            </div>
+        
+            <div class="footer-section">
+                <span>Mídias:</span>
+                <a href="https://open.spotify.com/intl-pt/album/3Kb8mnY1vkZYnEN4ssOyDs?si=rHHHGohvSX-pGjucyM3Rqg" target="_blank">
+                    <img src="{% static 'img/spot.jpg' %}" alt="Spotify Icon" width="20" height="20">
+                </a>
+                <a href="https://www.youtube.com/user/OMundoImaginario" target="_blank">
+                    <img src="{% static 'img/yout.png' %}" alt="YouTube Icon" width="20" height="20">
+                </a>
+            </div>
+        
+            <div class="footer-section">
+                <span>Contatos:</span>
+                <a href="https://wa.me/5511995984222?text=Tenho%20interesse%20em%20no%20seu%20trabalho" target="_blank">
+                    <img src="{% static 'img/whats.png' %}" alt="WhatsApp Icon" width="20" height="20">
+                </a>
+                <a href="mailto:balaiodarte@yahoo.com.br" target="_blank">
+                    <img src="{% static 'img/email.png' %}" alt="Email Icon" width="20" height="20">
+                </a>
+            </div>
+        </footer>
+        <!-- Rodapé da pagina -->
 
     </body>
 </html>

@@ -1,6 +1,6 @@
 header{/* Efeitos do cabeçalho*/
     width: 100%;/* Largura em percentual da pagina*/
-    background-color: black;/*cor de fundo, pode se definir em nome da cor em ingles, codigo rgd(,,) ou codigo hexadecimal */
+    background-color: rgb(40, 2, 255);/*cor de fundo, pode se definir em nome da cor em ingles, codigo rgd(,,) ou codigo hexadecimal */
     color: white;/*Cor do texto */
     padding-left: 5%;/*Espaço entre o texto e a borda esquerda definido em pixels ou percentual*/
     box-sizing: border-box;/* impede que o tamnho da caixa mude quando se defide espaços nas bordas*/
@@ -10,7 +10,7 @@ header{/* Efeitos do cabeçalho*/
 }
 nav{/*Efeitos da caixa de navegação */
     width: 100%;
-    background-color: #333333;
+    background-color: #0055ff;
     padding: 10px;/*define espaço entre o texto e as 3 bordas(left,top,bottom) */
     box-sizing: border-box;
     font-family: 'Pacifico', cursive;
@@ -19,12 +19,20 @@ nav{/*Efeitos da caixa de navegação */
     z-index:10;
 
 }
+
+button.botao{
+    background-color: #0055ff;
+    color: white;
+    border:none;
+    font-family: 'Pacifico', cursive;
+}
+
 main{/*Efeitos na caixa principal */
     width: 100%;
     min-height: 400px;
     max-height: auto;
-    background-color: grey;
-    color: blue;
+    background-color: rgb(0, 13, 255);
+    color: rgb(0, 0, 0);
 
 }
 
@@ -32,8 +40,8 @@ main{/*Efeitos na caixa principal */
 
 footer{/*efeitos no rodapé */
     width: 100%;
-    height: 20px;
-    background-color: black;
+    height: 30px;
+    background-color: #0055ff;
     color: white
 }
 *{/* O asterisco indica que todos os campos seram afetados pelo comando */
@@ -89,12 +97,7 @@ div.menu a {
 }
 
 
-button.botao{
-    background-color: #333333;
-    color: white;
-    border:none;
-    font-family: 'Pacifico', cursive;
-}
+
 
 button.botao, div.submenu{
     min-width: 120px;
@@ -112,4 +115,23 @@ div.menu{
 div.submenu{
     position: absolute;
     z-index:10;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Espaço uniforme entre as seções */
+    padding: 5px;
+    max-width: 100%; /* Limita o footer à largura da página */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    margin: 0 auto; /* Centraliza o footer na página */
+
+}
+
+.footer-section {
+    display: flex;
+    gap: 5px;                     /* Espaçamento entre ícones e texto */
+}
+
+.footer-section span {
+    margin-right: 5px;             /* Espaçamento entre o texto e os ícones */
 }
