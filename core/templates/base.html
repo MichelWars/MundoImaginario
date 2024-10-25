@@ -1,20 +1,168 @@
 {% load static %}
-<!DOCTYPE html> 
 
-<html lang="pt-br"> <!--Trecho do código em html dentro dessas tags,usar lang=”PT-BR” dentro da tag <html> para definir idioma -->
-    <head><!--Cabeçalho da página -->
+<style>
+    main {
+        background-image: url("{% static 'img/fundoGif.avif' %}"); /* Certifique-se de que o caminho esteja correto */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Fixe o fundo para evitar que ele role com a página */
+        color: #000; /* Cor do texto de corpo */
+        width: 100%;
+        min-height: 400px;
+    }
+
+    header {
+        background-image: url("{% static 'img/fundoGif.avif' %}"); /* Certifique-se de que o caminho esteja correto */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;/* Largura em percentual da pagina*/
+        background-color: rgb(40, 2, 255);/*cor de fundo, pode se definir em nome da cor em ingles, codigo rgd(,,) ou codigo hexadecimal */
+        color: white;/*Cor do texto */
+        padding-left: 5%;/*Espaço entre o texto e a borda esquerda definido em pixels ou percentual*/
+        box-sizing: border-box;/* impede que o tamnho da caixa mude quando se defide espaços nas bordas*/
+        font-family: 'Pacifico', arial; /* Aplica fonte importada */
+        font-size:30px;
+        text-align: center;
+    }
+
+    nav{/*Efeitos da caixa de navegação */
+        width: 100%;
+        background-color: #0055ff;
+        padding: 10px;/*define espaço entre o texto e as 3 bordas(left,top,bottom) */
+        box-sizing: border-box;
+        font-family: 'Pacifico', cursive;
+        display: flex;/*cria um display flexivel para usar a função align-items*/
+        align-items: center;/* define o espaço entre os itens (centralziado)*/
+        z-index:10;
+    
+    }
+    
+    button.botao{
+        background-color: #0055ff;
+        color: white;
+        border:none;
+        font-family: 'Pacifico', cursive;
+    }
+    
+    
+    
+    
+    footer{/*efeitos no rodapé */
+        width: 100%;
+        height: 30px;
+        background-color: #0055ff;
+        color: white
+    }
+    *{/* O asterisco indica que todos os campos seram afetados pelo comando */
+        margin: 0px auto;/* define o espaço das margens em pixel */
+    }
+    
+    div.submenu{
+        display: none; /*oculta o sub menu div*/
+        position:absolute; /*abre o submenu sem expandir o container nav*/
+        background-color: grey;
+        font-family: 'Pacifico', cursive;
+        z-index:10;
+    
+    }
+    
+    div.menu:hover div.submenu{
+        display: block; /*Exibe o item que esta oculto quando passar o mouse por cima*/
+        z-index:10;
+        
+    
+    }
+    
+    div.submenu a {
+        display:block; /*Mostra os links um embaixo do outro*/
+        color:black;
+        text-decoration: none;
+        padding: 5px 10px;
+        font-size:20px;
+        box-shadow:8px 8px 10px 5px rgba(0,0,0,0.7);
+        z-index:10;
+    }
+    div.submenu a:hover{
+        background-color:blueviolet;
+        font-size:20px;
+        z-index:10;
+    
+    
+    }
+    div.menu a:hover{
+        background-color:blueviolet;
+        font-size:20px;
+        z-index:10;
+    
+    }
+    div.menu a {
+        display:block; /*Mostra os links um embaixo do outro*/
+        color:white;
+        text-decoration: none;
+        padding: 5px 10px;
+        font-size:20px;
+        z-index:10;
+        
+    }
+    
+    
+    
+    
+    button.botao, div.submenu{
+        min-width: 120px;
+        font-size:20px;
+        z-index:10;
+    
+    }
+    
+    div.menu{
+        display: inline-block;
+        z-index: index 10;
+    
+    }
+    
+    div.submenu{
+        position: absolute;
+        z-index:10;
+    }
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-around; /* Espaço uniforme entre as seções */
+        padding: 5px;
+        max-width: 100%; /* Limita o footer à largura da página */
+        box-sizing: border-box; /* Inclui padding e border na largura total */
+        margin: 0 auto; /* Centraliza o footer na página */
+    
+    }
+    
+    .footer-section {
+        display: flex;
+        gap: 5px;                     /* Espaçamento entre ícones e texto */
+    }
+    
+    .footer-section span {
+        margin-right: 5px;             /* Espaçamento entre o texto e os ícones */
+    }
+</style>
+
+    <head>
         <title>O Mundo Imaginario</title><!-- -->
         <meta charset="UTF-8"><!--Define o padrão de escrita para ask2 (idiomas latinos com acentuação)-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="{% static 'css/configura.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'css/configura.css' %}"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
-        
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">    
     </head>
-    <body><!-- -->
+
+    <body>
+
         <header><!--Cabeçalho do corpo -->
-            <div><h1>Mundo Imaginario - O Musical!</h1></div><!--Titulo -->
+            <div><h1 class="header">Mundo Imaginario - O Musical!</h1></div><!--Titulo -->
         </header>
         <nav><!--Barra/container/caixa de navegação -->
             <div class="menu">
@@ -84,4 +232,3 @@
         <!-- Rodapé da pagina -->
 
     </body>
-</html>

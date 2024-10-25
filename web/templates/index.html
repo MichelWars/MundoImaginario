@@ -1,12 +1,16 @@
 {% extends "base.html" %}
-{% load static %}
 {% block content %}
+{% load static %}
+
+
+
     <style>
 
         h1.index{
-            color: rgb(3, 244, 232);
+            color: rgb(0, 0, 0);
             width: 50%;
             font-size: 20px;
+            text-align: center;
 
         }
 
@@ -15,22 +19,24 @@
             justify-content: center; /* Centraliza horizontalmente */
         }
 
+
+   
     </style>
     
 
-    <div>
+    <div >
         <h1 class="index">
             <div>
                 <img src="{% static 'img/logoMI.webp' %}" alt="logo" >
             </div>
-        <p>  O Mundo Imaginário é um musical cênico infantil que </p>
+            O Mundo Imaginário é um musical cênico infantil que
             trata questões ligadas a conservação do meio ambiente, 
             diversidade, ecologia e a importância da imaginação 
             por meio de canções divertidas e de fácil memorização.
     </h1>
     <!-- Player spotfy -->
     <div class="iframe">
-         <iframe style="border-radius:12px; margin: 0 auto;" src="https://open.spotify.com/embed/album/3Kb8mnY1vkZYnEN4ssOyDs?utm_source=generator&theme=0" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+         <iframe style="border-radius:12px; margin: 10 auto;" src="https://open.spotify.com/embed/album/3Kb8mnY1vkZYnEN4ssOyDs?utm_source=generator&theme=0" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
      </div>
 </div>
 
