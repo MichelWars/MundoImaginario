@@ -13,8 +13,8 @@ class LocalFotosAdmin(admin.ModelAdmin):
     
     
 class FotosAdmin(admin.ModelAdmin):
-    list_display = ('imagem', 'legenda', 'local')
-    search_fields = ('legenda', 'local')
+    list_display = ('id','imagem', 'legenda', 'local')
+    search_fields = ('id','legenda', 'local__local')
 
 admin.site.register(Agenda, AgendaAdmin)
 admin.site.register(LocalFotos, LocalFotosAdmin)

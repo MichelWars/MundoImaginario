@@ -7,75 +7,177 @@
         text-decoration: none;
     }
 
-h2 {
-    color: black;
-}
+    h2 {
+        color: black;
+    }
 
     .foto-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); 
         gap: 20px;
         margin: 0 auto;
         max-width: 1200px;
         padding: 20px;
-      }
-    
-      .foto-card {
+    }
+
+    .foto-card {
         background-color: #e3e1e1;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         overflow: hidden;
         text-align: center;
         transition: all 0.3s ease;
-      }
-    
-      .foto-card:hover {
-          cursor: pointer;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-          transform: translateY(-2px);
-      }
-    
-      .foto-card img {
+    }
+
+    .foto-card:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .foto-card img {
         width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-    
-      .foto-card h3 {
-          font-size: 20px;
-          margin-top: 10px;
-          margin-bottom: 5px;
-      }
-    
-      .foto-card h2 {
+        height: 250px;
+        object-fit: cover; 
+    }
+
+    .foto-card h3 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .foto-card h2 {
         font-size: 1.5rem;
         margin: 10px;
-      }
-    
-      .foto-card p {
-        font-size: 1rem;
-        margin-bottom: 10px;
-      }
-    
-      @media (max-width: 768px) {
-        .foto-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    
+    }
 
+    .modal {
+        display: none; /* Oculto por padrão */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .foto-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 </style>
 
-    <h1>Fotos no Teatro</h1>
-    <div class="foto-grid">
+<h1>Fotos no Teatro</h1>
+
+<div class="foto-grid">
     {% for foto in teatro %}
-        <div class="foto-card">
-             <a href="{{foto.imagem.url}}">
-            <img src="{{foto.imagem.url}}">
-             <h2>{{foto.legenda}}</h2>
-             </a>
-         </div>
-    </div> 
-    {%endfor%}
+        <div class="foto-card" onclick="openModal({{ forloop.counter0 }})">
+            <img src="{{ foto.imagem.url }}" alt="{{ foto.legenda }}">
+            <h2>{{ foto.legenda }}</h2>
+        </div>
+    {% endfor %}
+</div> 
+
+<!-- Modal para visualização expandida -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <span class="arrow prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="modal-image" src="" alt="">
+        <h2 id="modal-caption"></h2>
+        <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+</div>
+
+<script>
+    const images = [
+        {% for foto in teatro %}
+            {
+                url: "{{ foto.imagem.url }}",
+                caption: "{{ foto.legenda }}"
+            }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ];
+
+    let currentIndex = 0;
+
+    // Função para abrir o modal e exibir a imagem e legenda
+    function openModal(index) {
+        currentIndex = index;
+        updateModal();
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Função para atualizar a imagem e legenda no modal
+    function updateModal() {
+        document.getElementById("modal-image").src = images[currentIndex].url;
+        document.getElementById("modal-caption").textContent = images[currentIndex].caption;
+    }
+
+    // Função para mudar a imagem
+    function changeImage(direction) {
+        currentIndex += direction;
+
+        // Verificar limites
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Volta para a última imagem
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0; // Volta para a primeira imagem
+        }
+
+        updateModal();
+    }
+</script>
 
 {% endblock %}
