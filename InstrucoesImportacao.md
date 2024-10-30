@@ -10,7 +10,7 @@ após instalação do git abrir prompt de comando(Windows R, digitar cmd e dar e
 
 no cmd digitar git (enter)
 git config --global user.name "seu nick do git" (enter)
-git confif --global user.email "seu email do git" (enter)
+git config --global user.email "seu email do git" (enter)
 git config --list(enter e ver se deu certo)
 
 Vscode
@@ -35,11 +35,13 @@ ctrl shift p
 digitar git clone enter e colar a url do Repositório e sincronizar 
 
 
-depois abra o terminal e digite python -m pip install -r requirements.txt (para instalar as bibliotecas)
 
 python -m venv venv (criar o ambiente virtual)
 
 .\venv\Scripts\activate (para ativar a venv)
 (caso não rode é necessario rodar o comando Set-ExecutionPolicy Unrestricted no power shell como administrador)
+
+depois abra o terminal e digite python -m pip install -r requirements.txt (para instalar as bibliotecas)
+
 
 python manage.py runserver (executar o servidor)
