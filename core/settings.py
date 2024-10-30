@@ -51,11 +51,6 @@ MIDDLEWARE = [
     
 ]
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d28f5d13d74491e6f31ef8fe87ef968df4ffc2a6
-
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
