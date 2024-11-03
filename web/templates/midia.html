@@ -53,6 +53,14 @@
             z-index: 2;
         }
 
+        .prev {
+            left: 10px;
+        }
+    
+        .next {
+            right: 10px;
+        }
+
         a {
             text-decoration: none;
         }
@@ -106,6 +114,42 @@
             font-size: 1rem;
             margin-bottom: 10px;
         }
+
+        .modal {
+            display: none; /* Oculto por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+        }
+    
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
        
         @media (max-width: 768px) {
             .foto-grid {
@@ -119,74 +163,125 @@
 
 <h1 class="title">Balaio D'Arte na Midia</h1>
 
-<div class="foto-grid"><!-- Carrega grade de fotos -->
-    {% for foto in escola %}
-        <div class="foto-card">
-             <a href="{{foto.imagem.url}}">
-            <img src="{{foto.imagem.url}}">
-             <h2>{{foto.legenda}}</h2>
-             </a>
-         </div>
-         {%endfor%}
-    </div>
 
 <div class="carousel-container"><!-- Playlist de Videos -->
     <div class="carousel-videos" id="videoCarousel">
-        <iframe id="video1" class="active" src="https://www.youtube.com/embed/0tnXzkms0i8?enablejsapi=1&rel=0&wmode=transparent" title="Video 1" allow="autoplay; encrypted-media"></iframe>
-        <iframe id="video2" src="https://www.youtube.com/embed/Xzwblhc15Fc?enablejsapi=1&rel=0&wmode=transparent" title="Video 2" allow="autoplay; encrypted-media"></iframe>
-        <iframe id="video3" src="https://www.youtube.com/embed/i5ibbbaoOR0?enablejsapi=1&rel=0&wmode=transparent" title="Video 3" allow="autoplay; encrypted-media"></iframe>
-        <iframe id="video4" src="https://www.youtube.com/embed/gItf80X4Qp8?enablejsapi=1&rel=0&wmode=transparent" title="Video 4" allow="autoplay; encrypted-media"></iframe>
-        <iframe id="video5" src="https://www.youtube.com/embed/OQw-mwUyt6Q?enablejsapi=1&rel=0&wmode=transparent" title="Video 5" allow="autoplay; encrypted-media"></iframe>
+        {% for video in video %}
+            <iframe id="{{ video.id }}" class="{% if forloop.first %}active{% endif %}" src="{{video.link}}?enablejsapi=1&rel=0&wmode=transparent" title="{{video.titulo}}" allow="autoplay; encrypted-media"></iframe>
+        {%endfor%}
+        
     </div>
     <div class="arrow left" onclick="prevVideo()">&#10094;</div>
     <div class="arrow right" onclick="nextVideo()">&#10095;</div>
 </div>
 
+
+<div class="foto-grid"><!-- Carrega grade de fotos -->
+    {% for foto in midia %}
+        <div class="foto-card"onclick="openModal({{ forloop.counter0 }})">
+                <img src="{{foto.imagem.url}}" alt="{{ foto.legenda }}">
+                <h2>{{foto.legenda}}</h2>
+         </div>
+    {%endfor%}
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <span class="arrow prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="modal-image" src="" alt="">
+        <h2 id="modal-caption"></h2>
+        <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+</div>
+
 <script>
     let currentVideo = 0;
     const videoFrames = document.querySelectorAll('.carousel-videos iframe');
-
+    
     // Função para parar o vídeo em execução
     function pauseVideo(video) {
         video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
-
+    
     // Função para iniciar o próximo vídeo
     function playVideo(video) {
-        video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    }
-
-    function showVideo(index) {
-        const totalVideos = videoFrames.length;
-
-        if (index >= totalVideos) {
-            currentVideo = 0; // volta ao início
-        } else if (index < 0) {
-            currentVideo = totalVideos - 1; // vai para o último
-        } else {
-            currentVideo = index;
+            video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
         }
-
-        // Pausar o vídeo atual
-        videoFrames.forEach(video => video.classList.remove('active'));
-        pauseVideo(videoFrames[currentVideo]);
-
-        // Mostrar o próximo vídeo e reproduzir automaticamente
-        videoFrames[currentVideo].classList.add('active');
-        playVideo(videoFrames[currentVideo]);
+        
+        function showVideo(index) {
+            const totalVideos = videoFrames.length;
+            
+            if (index >= totalVideos) {
+                currentVideo = 0; // volta ao início
+            } else if (index < 0) {
+                currentVideo = totalVideos - 1; // vai para o último
+            } else {
+                currentVideo = index;
+            }
+            
+            // Pausar o vídeo atual
+            videoFrames.forEach(video => video.classList.remove('active'));
+            pauseVideo(videoFrames[currentVideo]);
+    
+            // Mostrar o próximo vídeo e reproduzir automaticamente
+            videoFrames[currentVideo].classList.add('active');
+            playVideo(videoFrames[currentVideo]);
+        }
+    
+        function nextVideo() {
+            pauseVideo(videoFrames[currentVideo]);
+            showVideo(currentVideo + 1);
+        }
+        
+        function prevVideo() {
+            pauseVideo(videoFrames[currentVideo]);
+            showVideo(currentVideo - 1);
+        }
+        
+        //js para fotos
+        const images = [
+        {% for foto in midia %}
+        {
+            url: "{{ foto.imagem.url }}",
+            caption: "{{ foto.legenda }}"
+            }{% if not forloop.last %},{% endif %}
+            {% endfor %}
+            ];
+            
+            let currentIndex = 0;
+            
+            // Função para abrir o modal e exibir a imagem e legenda
+            function openModal(index) {
+                currentIndex = index;
+                updateModal();
+        document.getElementById("myModal").style.display = "block";
     }
-
-    function nextVideo() {
-        pauseVideo(videoFrames[currentVideo]);
-        showVideo(currentVideo + 1);
+    
+    // Função para fechar o modal
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
     }
-
-    function prevVideo() {
-        pauseVideo(videoFrames[currentVideo]);
-        showVideo(currentVideo - 1);
+    
+    // Função para atualizar a imagem e legenda no modal
+    function updateModal() {
+        document.getElementById("modal-image").src = images[currentIndex].url;
+        document.getElementById("modal-caption").textContent = images[currentIndex].caption;
+    }
+    
+    // Função para mudar a imagem
+    function changeImage(direction) {
+        currentIndex += direction;
+    
+        // Verificar limites
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Volta para a última imagem
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0; // Volta para a primeira imagem
+        }
+        
+        updateModal();
     }
 </script>
-
-
 
 {% endblock %}
