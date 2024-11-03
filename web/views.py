@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from web.models import Agenda, LocalFotos, Fotos, youtube_link_video
+from django.utils import timezone
 # Create your views here.
 
 
@@ -36,7 +37,8 @@ def escola_view(request):
 
 
 def agenda_view(request):
-    agenda = Agenda.objects.all().order_by('data')
+    hoje = timezone.now().date()
+    agenda = Agenda.objects.filter(data__gte=hoje).order_by('data')
     return render(request,
      'agenda.html',
      {'agenda': agenda})
