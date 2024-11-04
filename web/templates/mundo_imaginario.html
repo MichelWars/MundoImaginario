@@ -1,6 +1,141 @@
 {% extends "base.html" %}
-
 {% block content %}
+<head>
+    <title>Espetáculos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #6A5ACD;
+            padding-top: 1px;
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+        }
+        .wrapper h1 {
+            font-size: 4em;
+            margin-bottom: 10px; 
+            padding: 5px 15px;
+            color: #ffff;
+        }
+        .wrapper p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #ffff;
+        }
+        .content-box {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            transition: 0.3s;
+            align-items: center;
+        }
+        .card h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .card p {
+            color: #6c757d;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .card button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: auto; /* Empurra o botão para a parte inferior do card */
+        }
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        .card:hover {
+            background: linear-gradient(90deg, rgba(2,2,36,0.7) 0%, rgba(9,9,221,0.7) 35%, rgba(0,212,255,0.7) 100%);
+            opacity: 0.8;
+            color: #fff;
+        }
+        .card:hover p, .card:hover h2 {
+            color: #fff;
+        }
+        .card:nth-child(2):hover{
+            background: linear-gradient(90deg, rgba(2,2,36,0.7) 0%, rgba(9,9,221,0.7) 35%, rgba(0,212,255,0.7) 100%);
+        }
+        .card:nth-child(3):hover {
+            background: linear-gradient(90deg, rgba(2,2,36,0.7) 0%, rgba(9,9,221,0.7) 35%, rgba(0,212,255,0.7) 100%);
+        }
+        @media (max-width: 991px) {
+            .wrapper h1 {
+                font-size: 2.5em;
+            }
+            .wrapper p {
+                padding: 5px 15px;
+            }
+            .content-box {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+            .card {
+                min-width: 300px;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <h1>Espetáculos</h1>
+            <p>Conheça nossos outros espetáculos, se encante e entre em contato para mais informações.</p>
+            <div class="content-box">
+                <div class="card">
+                    <h2>O Mundo Imaginário</h2>
+                    <p>
+                        Um espetáculo de Beto Paschoal que lida com a ecologia e a relação das crianças com os animais por meio de músicas envolventes e uma abordagem lúdica. Apresentado em várias unidades do SESC e espaços públicos.
+                    </p>
+                    <button onclick="window.location.href='pagina1.html'">Saiba Mais</button>
+                </div>
+                <div class="card">
+                    <h2>SOS Natureza</h2>
+                    <p>
+                        Este espetáculo utiliza canções cativantes para conscientizar as crianças sobre a proteção de animais exóticos ameaçados de extinção, abordando a preservação ambiental de forma acessível.
+                    </p>
+                    <button onclick="window.location.href='outrosEspetaculos.html'">Saiba Mais</button>
+                </div>
+                <div class="card">
+                    <h2>Brinquedos e Brincadeiras</h2>
+                    <p>
+                        Revive jogos e brincadeiras tradicionais e modernas, oferecendo uma experiência interativa onde as crianças são convidadas a participar e se divertir com o elenco.
+                    </p>
+                    <button onclick="window.location.href='outrosEspetaculos.html'">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
 
-<h1>O Mundo Imaginario</h1>
 {% endblock %}
