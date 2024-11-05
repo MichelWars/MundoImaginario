@@ -1,6 +1,99 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<h1>teste3</h1>
+
+
+<style>
+
+    .conteudo {
+        display: flex;
+        flex-direction: row; 
+        justify-content: left; 
+        align-items: center;
+        margin: 5px;
+        padding: 5px;
+        background-color: gray;
+    }
+
+    .texto {
+        background-color: aqua;
+        width: 50%;
+    }
+
+    .foto{
+        background-color: blue;
+    }
+</style>
+
+    <h1>Blog</h1>
+
+
+
+
+    <div class="blog">
+
+        <div class="conteudo">
+
+            <div class="foto">
+                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
+            </div>
+
+            <div class="texto" >
+               <h1>Como ensinar ecologia para páginas da internet?</h1> 
+
+                Quando falamos em ecologia e consciência ambiental logo pensamos em ONGs e grandes projetos que ajudam a preservar a natureza em seus...            </div>
+
+        </div>
+
+        <div class="conteudo">
+
+            <div class="foto">
+                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
+            </div>
+
+            <div class="texto">
+                Texto exemplo
+            </div>
+
+        </div>
+
+        <div class="conteudo">
+
+            <div class="foto">
+                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
+            </div>
+
+            <div class="texto">
+                Texto exemplo
+            </div>
+
+        </div>
+
+        <div class="conteudo">
+
+            <div class="foto">
+                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
+            </div>
+
+            <div class="texto">
+                Texto exemplo
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
 
 {% endblock %}
