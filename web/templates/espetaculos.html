@@ -4,11 +4,15 @@
 <head>
     <title>Espetáculos</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+   
     <style>
         * {
-            margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none;
         }
         .wrapper {
             min-height: 100vh;
@@ -118,21 +122,21 @@
                     <p>
                         Um espetáculo de Beto Paschoal que lida com a ecologia e a relação das crianças com os animais por meio de músicas envolventes e uma abordagem lúdica. Apresentado em várias unidades do SESC e espaços públicos.
                     </p>
-                    <button onclick="window.location.href='pagina1.html'">Saiba Mais</button>
+                    <button><a href="{% url 'peca1' %}">Saiba Mais</a></button>
                 </div>
                 <div class="card">
                     <h2>SOS Natureza</h2>
                     <p>
                         Este espetáculo utiliza canções cativantes para conscientizar as crianças sobre a proteção de animais exóticos ameaçados de extinção, abordando a preservação ambiental de forma acessível.
                     </p>
-                    <button onclick="window.location.href='outrosEspetaculos.html'">Saiba Mais</button>
+                    <button><a href="{% url 'peca2' %}">Saiba Mais</a></button>
                 </div>
                 <div class="card">
                     <h2>Brinquedos e Brincadeiras</h2>
                     <p>
                         Revive jogos e brincadeiras tradicionais e modernas, oferecendo uma experiência interativa onde as crianças são convidadas a participar e se divertir com o elenco.
                     </p>
-                    <button onclick="window.location.href='outrosEspetaculos.html'">Saiba Mais</button>
+                    <button><a href="{% url 'peca3' %}">Saiba Mais</a></button>
                 </div>
             </div>
         </div>
