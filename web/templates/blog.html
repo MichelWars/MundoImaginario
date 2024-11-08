@@ -5,92 +5,251 @@
 
 <style>
 
-    .conteudo {
-        display: flex;
-        flex-direction: row; 
-        justify-content: left; 
-        align-items: center;
-        margin: 5px;
-        padding: 5px;
-        background-color: gray;
-    }
 
-    .texto {
-        background-color: aqua;
-        width: 50%;
-    }
 
-    .foto{
-        background-color: blue;
-    }
+
+.post-card {
+    display: flex;
+    border: 1px solid #4f4f4f;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 5px;
+}
+
+.post-image img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #3c00ff;
+    margin-bottom: 10px;
+}
+
+.author-logo {
+    width: 50px;
+    height: auto;
+    border-radius: 30%;
+    margin-right: 2px;
+}
+
+.author-name {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.post-date {
+    color: #888;
+}
+
+.post-title {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.post-excerpt {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+
+
+button:hover {
+    background-color: #0056b3;
+    
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.blog-fundo {
+    padding: 5px;
+    max-width: 70%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: transparent;
+    
+    
+    
+}
+
 </style>
 
-    <h1>Blog</h1>
+  
+<div class="blog-fundo">
 
 
 
+    <div class="post-card">
 
-    <div class="blog">
-
-        <div class="conteudo">
-
-            <div class="foto">
-                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
+        <div class="post-image">
+            <img src="{% static 'img/blog-ecologia1.webp' %}" alt="crianças plantando">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">13 de fev. de 2019 • 2 minutos de leitura</span>
             </div>
+            <h2 class="post-title">Como ensinar ecologia para crianças?</h2>
+            <p class="post-excerpt">Quando falamos em ecologia e consciência ambiental logo pensamos em ONGs e grandes projetos que ajudam a preservar a natureza em seus...</p>
+            <div class="post-footer">
 
-            <div class="texto" >
-               <h1>Como ensinar ecologia para páginas da internet?</h1> 
-
-                Quando falamos em ecologia e consciência ambiental logo pensamos em ONGs e grandes projetos que ajudam a preservar a natureza em seus...            </div>
-
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
         </div>
 
-        <div class="conteudo">
+    </div>
 
-            <div class="foto">
-                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
-            </div>
-
-            <div class="texto">
-                Texto exemplo
-            </div>
-
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/sem_imagem.png' %}" alt="crianças plantando">
         </div>
-
-        <div class="conteudo">
-
-            <div class="foto">
-                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">00 de mes. de 20xx • 2 minutos de leitura</span>
             </div>
-
-            <div class="texto">
-                Texto exemplo
+            <h2 class="post-title">TITULO</h2>
+            <p class="post-excerpt">Texto</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
             </div>
-
         </div>
+    </div>
 
-        <div class="conteudo">
-
-            <div class="foto">
-                <img src="{% static 'img/sem_imagem.png' %}" alt="sem imagem">
-            </div>
-
-            <div class="texto">
-                Texto exemplo
-            </div>
-
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/sem_imagem.png' %}" alt="crianças plantando">
         </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">00 de mes. de 20xx • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">TITULO</h2>
+            <p class="post-excerpt">Texto</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
 
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/sem_imagem.png' %}" alt="crianças plantando">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">00 de mes. de 20xx • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">TITULO</h2>
+            <p class="post-excerpt">Texto</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
 
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/sem_imagem.png' %}" alt="crianças plantando">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">00 de mes. de 20xx • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">TITULO</h2>
+            <p class="post-excerpt">Texto</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
 
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/sem_imagem.png' %}" alt="crianças plantando">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">00 de mes. de 20xx • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">TITULO</h2>
+            <p class="post-excerpt">Texto</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
 
-
-
-
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/sem_imagem.png' %}" alt="crianças plantando">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">00 de mes. de 20xx • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">TITULO</h2>
+            <p class="post-excerpt">Texto</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
     </div>
 
 
 
+    </div>
 
 
 
