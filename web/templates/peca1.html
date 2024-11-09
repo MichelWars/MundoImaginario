@@ -3,27 +3,19 @@
 {% block content %}
 
 <style>
-        
-    body{
-        font-family: sans-serif;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #1e8ec6; 
-        color: #000000;
-        padding: 0;
-    }
 
-    nav{
+
+
+    div.botao-voltar{
         width: 100%;
         text-align: center;
-        margin-top: 20px;
+
     }
 
-    .botao-voltar{
+    button.voltar{
         padding: 10px 20px;
-        background-color: #445651; 
+        background-color: #3050dc;
+        margin-top: 10px;
         color: #ffffff; 
         border: none;
         border-radius: 5px;
@@ -32,7 +24,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .botao-voltar:hover {
+    .voltar:hover {
         background-color: #00FFFF;
     }
 
@@ -113,17 +105,17 @@
     }
 </style>
 
-    <nav>
+    <div class="botao-voltar">
         <a href="{% url 'espetaculos' %}">
-            <button class="botao-voltar">Voltar</button>
+            <button class="voltar">Voltar</button>
         </a>
-    </nav>
+    </div>
 
     <div class="titulo">O Mundo Imaginário</div>
 
     <div class="conteudo">
         <div class="imagem">
-            <img src="mundoimaginario.jpg" alt="Cartaz do Espetáculo" />
+            <img src="{% static 'img/mundoimaginario.jpg' %}" alt="Cartaz do Espetáculo" />
         </div>
         <div class="texto">
             <p>Criado por Beto Paschoal em 2011, O Mundo Imaginário conta com repertório composto em parcerias com Lula Barbosa, Nilton Célio e Nando de Paula. Em cena, Beto é acompanhado pela atriz e cantora Lais Böker, com direção cênica de Ana Paula Navarro.</p>
