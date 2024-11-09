@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+        
+    body{
+        font-family: sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1e8ec6; 
+        color: #000000;
+        padding: 0;
+    }
+
+    nav{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .botao-voltar{
+        padding: 10px 20px;
+        background-color: #445651; 
+        color: #ffffff; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .botao-voltar:hover {
+        background-color: #00FFFF;
+    }
+
+    .titulo{
+        font-size: 2em;
+        font-weight: bold;
+        color: #3050dc; 
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: -1px -1px 0 #ffff00, 1px -1px 0 #ffff00, -1px 1px 0 #ffff00, 1px 1px 0 #ffff00; 
+    }
+
+    .conteudo{
+        display: flex;
+        justify-content: space-between;
+        width: 50%; 
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #7fb4dc; 
+        border: 1px solid #e1d781; 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        color: #000000; 
+    }
+
+    .imagem {
+        width: 45%;
+    }
+
+    .imagem img {
+        width: 80%;
+        height: auto;
+        border: 2px solid #000000;
+        border-radius: 10px;
+    }
+
+    .texto {
+        width: 50%;
+        text-align: justify;
+    }
+
+    .carrossel {
+        width: 30%; 
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .carrossel img {
+        width: 30%; 
+        display: none;
+    }
+
+    .carrossel img.active {
+        display: block;
+    }
+
+    .legenda {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #ffffff; 
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        margin: 15px;
+        padding: 10px 20px;
+        background-color: #4169E1;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: #00FFFF;
+    }
+</style>
+
+    <nav>
+        <a href="{% url 'espetaculos' %}">
+            <button class="botao-voltar">Voltar</button>
+        </a>
+    </nav>
+
+    <div class="titulo">O Mundo Imaginário</div>
+
+    <div class="conteudo">
+        <div class="imagem">
+            <img src="mundoimaginario.jpg" alt="Cartaz do Espetáculo" />
+        </div>
+        <div class="texto">
+            <p>Criado por Beto Paschoal em 2011, O Mundo Imaginário conta com repertório composto em parcerias com Lula Barbosa, Nilton Célio e Nando de Paula. Em cena, Beto é acompanhado pela atriz e cantora Lais Böker, com direção cênica de Ana Paula Navarro.</p>
+            <p>O show trata de assuntos como ecologia e a relação das crianças com os animais, de forma lúdica e divertida ao som de músicas contagiantes e de fácil memorização. O espetáculo já foi apresentado nas unidades do SESC de Itaquera, Sorocaba e Taubaté, em escolas, por meio de parcerias em todo o estado, além de em teatros e espaços públicos, por meio de parcerias com governos municipais de São Bernardo do Campo, São Caetano, Mauá, São Sebastião, Jacareí, Cruzeiro, Paraibúna e outras.</p>
+        </div>
+    </div>
+
+    <div class="carrossel">
+        <img src="imagem.jpg" alt="Imagem 1" class="active">
+        <img src="imagem2.jpg" alt="Imagem 2">
+        <img src="imagem3.jpg" alt="Imagem 3">
+        <div class="legenda">Legenda da Imagem 1</div>
+        <div class="legenda" style="display: none;">Legenda da Imagem 2</div>
+        <div class="legenda" style="display: none;">Legenda da Imagem 3</div>
+
+        <button class="prev">Anterior</button>
+        <button class="next">Próximo</button>
+    </div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carrossel img');
+    const legends = document.querySelectorAll('.legenda');
+
+    function updateCarousel() {
+        images.forEach((img, index) => {
+            img.classList.remove('active');
+            legends[index].style.display = 'none';
+        });
+        images[currentIndex].classList.add('active');
+        legends[currentIndex].style.display = 'block';
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        updateCarousel();
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    });
+
+    updateCarousel();
+</script>
+
+{%endblock %}

@@ -13,12 +13,18 @@ def qs_view(request):
     return render(request, 'quemSomos.html')
 
 
-def mu_i_view(request):
-    return render(request, 'mundo_imaginario.html')
+def espetaculos_view(request):
+    return render(request, 'espetaculos.html')
 
 
-def oe_view(request):
-    return render(request, 'outrosEspetaculos.html')
+def peca1_view(request):
+    return render(request, 'peca1.html')
+
+def peca2_view(request):
+    return render(request, 'peca2.html')
+
+def peca3_view(request):
+    return render(request, 'peca3.html')
 
 def midia_view(request):
     midia = Fotos.objects.filter(local=2)

@@ -1,6 +1,258 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<h1>teste3</h1>
+
+
+<style>
+
+
+
+
+.post-card {
+    display: flex;
+    border: 1px solid #4f4f4f;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 5px;
+}
+
+.post-image img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #3c00ff;
+    margin-bottom: 10px;
+}
+
+.author-logo {
+    width: 50px;
+    height: auto;
+    border-radius: 30%;
+    margin-right: 2px;
+}
+
+.author-name {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.post-date {
+    color: #888;
+}
+
+.post-title {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.post-excerpt {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+
+
+button:hover {
+    background-color: #0056b3;
+    
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.blog-fundo {
+    padding: 5px;
+    max-width: 70%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: transparent;
+    
+    
+    
+}
+
+</style>
+
+  
+<div class="blog-fundo">
+
+
+
+    <div class="post-card">
+
+        <div class="post-image">
+            <img src="{% static 'img/blog-ecologia1.webp' %}" alt="crianças plantando">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">13 de fev. de 2019 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">Como ensinar ecologia para crianças?</h2>
+            <p class="post-excerpt">Quando falamos em ecologia e consciência ambiental logo pensamos em ONGs e grandes projetos que ajudam a preservar a natureza em seus...</p>
+            <div class="post-footer">
+
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+
+    </div>
+
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/6-atv-fzr-ferias.webp' %}" alt="crianças sorrindo">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">7 de dez. de 2018 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">6 atividades para fazer com as crianças nas férias</h2>
+            <p class="post-excerpt">Dezembro já chegou e com ele também chegam as férias escolares. Com as crianças em casa, as atividades e brincadeiras acabam se esgotando...</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
+
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/mun-img-estr-tea-raul-cortez.webp' %}" alt="peça de teatro">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">12 de nov. de 2018 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">O Mundo Imaginário estreia temporada no Teatro Raul Cortez</h2>
+            <p class="post-excerpt">São Paulo conta com uma nova programação para a criançada no Teatro Raul Cortez. O Mundo Imaginário, um musical cênico que trata sobre a...</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
+
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/esp-int.webp' %}" alt="Peça de teatro">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">22 de out. de 2018 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">Balaio D'arte estreia espetáculo interativo com desenhos animados</h2>
+            <p class="post-excerpt">Em pleno mês das crianças, a companhia de produções artísticas Balaio D'arte estreou o seu novo espetáculo, “Cantando com desenhos”, em...</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
+
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/obrigado-professor.webp' %}" alt="obrigado professor">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">15 de out. de 2018 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">Dia do professor: como usar o teatro no aprendizado?</h2>
+            <p class="post-excerpt">O professor tem um papel essencial na formação do ser humano desde a primeira infância até o resto de nossas vidas como aprendizes. Seja...</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
+
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/rotary-club.webp' %}" alt="rotary-club">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">8 de out. de 2018 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">Balaio D'arte recebe subsídio do Rotary Club SBC Terra Nova</h2>
+            <p class="post-excerpt">A Balaio D'arte Produções Artísticas recebeu, na última terça-feira (02), o subsídio distrital do Rotary Club SBC Terra Nova para...</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
+
+    <div class="post-card">
+        <div class="post-image">
+            <img src="{% static 'img/musica-crianca.webp' %}" alt="criança com headphone">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Logo do Balaio D'Arte" class="author-logo">
+                <span class="author-name">Balaio d'arte</span>
+                <span class="post-date">6 de set. de 2018 • 2 minutos de leitura</span>
+            </div>
+            <h2 class="post-title">4 Benefícios da música para as crianças</h2>
+            <p class="post-excerpt">As estruturas auditivas são uma das primeiras a serem formadas durante o período de gestação. Desde cedo já temos contato com o som...</p>
+            <div class="post-footer">
+                <button><a href="{% url 'peca1' %}">Ler Mais</a></button>              
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+
+
 
 {% endblock %}
