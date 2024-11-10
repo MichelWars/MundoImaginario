@@ -3,7 +3,6 @@
 {% block content %}
 
 <style>
-<<<<<<< HEAD
     body{
         font-family: sans-serif;
         margin: 0;
@@ -14,10 +13,6 @@
         color: #000000;
         padding: 0;
     }
-=======
->>>>>>> 2ddaeb08bd0e9af6ce18cbaee73f25c1e2cbb262
-
-
 
     div.botao-voltar{
         width: 100%;
@@ -87,7 +82,7 @@
     }
 
     .carrossel img {
-        width: 30%; 
+        width: 50%; 
         display: none;
     }
 
@@ -99,7 +94,7 @@
         text-align: center;
         margin-top: 10px;
         font-size: 0.9em;
-        color: #ffffff; 
+        color: #000000; 
     }
 
     .prev, .next {
@@ -137,12 +132,16 @@
     </div>
 
     <div class="carrossel">
-        <img src="imagem.jpg" alt="Imagem 1" class="active">
-        <img src="imagem2.jpg" alt="Imagem 2">
-        <img src="imagem3.jpg" alt="Imagem 3">
-        <div class="legenda">Legenda da Imagem 1</div>
-        <div class="legenda" style="display: none;">Legenda da Imagem 2</div>
-        <div class="legenda" style="display: none;">Legenda da Imagem 3</div>
+        <img src="{% static 'img/terra.jpg' %}" alt="Imagem 1" class="active">
+        <img src="{% static 'img/aranha.jpg' %}" alt="Imagem 2">
+        <img src="{% static 'img/abelha.jpg' %}" alt="Imagem 3">
+        <img src="{% static 'img/carangueijo.jpg' %}" alt="Imagem 4">
+        <img src="{% static 'img/cachorro.jpg' %}" alt="Imagem 5">
+        <div class="legenda">Planeta Terra</div>
+        <div class="legenda" style="display: none;">Aranha</div>
+        <div class="legenda" style="display: none;">Abelha</div>
+        <div class="legenda" style="display: none;">Carangueijo</div>
+        <div class="legenda" style="display: none;">Vira-Lata</div>
 
         <button class="prev">Anterior</button>
         <button class="next">Próximo</button>

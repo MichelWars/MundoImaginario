@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+
+    p{
+        text-align: justify;
+        font-family: cursive;
+    }
+
+
+    .post-container {
+        max-width: 1000px;
+        margin: 5px auto;
+        padding: 10px 50px 0px 50px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .post-header {
+        display: flex;
+        align-items: center; /* Alinha a imagem e o texto verticalmente */
+        justify-content: flex-start; /* Alinha tudo à esquerda */
+        gap: 10px; /* Controla a distância entre a imagem e o texto */
+        margin-bottom: 20px;
+ 
+    }
+
+    .post-header img {
+        
+        border-radius: 8px;
+        width: 40px;
+        height: 40px;
+        margin:0;
+
+    }
+
+    .author-info {
+        font-size: 14px;
+        color: #888;
+        margin:0;
+    }
+
+    .author-name {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .post-title {
+        font-size: 32px;
+        color: #333;
+        margin-top: 15px;
+        font-family: 'Pacifico';
+    }
+
+    .post-date {
+        color: #888;
+        font-size: 14px;
+    }
+
+    .post-excerpt, .post-content p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .post-content {
+        margin-top: 20px;
+    }
+
+    .post-subtitle {
+        font-size: 22px;
+        color: #333;
+        font-style: italic;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: justify;
+        font-family: 'Pacifico';
+    }
+
+    .post-content .image-text-container {
+        display: flex;
+        align-items: flex-start;
+        margin: 20px 0;
+    }
+
+    .post-content .image-text-container img {
+        max-width: 40%;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    .post-footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .post-footer a {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .post-footer a:hover {
+        background-color: #0056b3;
+    }
+
+    p.legenda {
+        font-size: 10px;
+        
+    }
+</style>
+
+<div class="post-container">
+
+    <div class="post-header">
+        <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Imagem de ecologia" >
+        <div class="author-info">
+            <span class="author-name">Balaio d'arte</span>
+            <span class="post-date">13 de fev. de 2019 • 2 minutos de leitura</span>
+        </div>
+    </div>
+
+    <h1 class="post-title">Como ensinar ecologia para crianças?</h1>
+
+    <div class="post-excerpt">
+        <p>Quando falamos em ecologia e consciência ambiental logo pensamos em ONGs e grandes projetos que ajudam a preservar a natureza em seus diversos âmbitos. Entretanto, sabemos que pequenos atos do dia a dia podem ter grande impacto na missão de proteger o meio ambiente    </p>
+    </div>
+
+    <div class="post-content">
+        <p>Por isso, é de extrema importância que conceitos como esses devem ser passados às crianças desde cedo. E mesmo dentro de um ambiente mais urbano e com pouco contato com a natureza, é possível estimular os pequenos e plantar essa sementinha desde cedo. Veja nossas 5 dicas para ensinar ecologia para as crianças:</p>
+
+        <h2 class="post-subtitle">1. Dê uma plantinha para chamar de sua</h2>
+        <div class="image-text-container">
+            <img src="{% static 'img/blog-ecologia1.webp' %}" alt="Crianças plantando árvores">
+            <p>Acompanhar o processo de germinação e crescimento de uma planta cria uma conexão direta da criança com a natureza, além de estimular o senso de responsabilidade, criando uma rotina de cuidados. E não é preciso ter uma horta ou jardim em casa. Experiências como plantar o feijão no algodão, usar um vaso pequeno para plantar uma erva aromática como hortelã ou uma planta de pequeno porte como o tomate cereja podem ser muito divertidas e ricas em aprendizado para os pequenos.
+
+            </p>
+        </div>
+
+        <h2 class="post-subtitle">2. Frequente parques e zoológicos</h2>
+        <div class="image-text-container">
+            <p>Brincar ao ar livre faz bem e é muito divertido. Além disso, as crianças podem conhecer outros tipos de vegetação, paisagens e animais, entendendo o quanto cada um deles é importante para o equilíbrio da natureza. Aproveite os finais de semana para organizar piqueniques, idas ao zoológico e parques da sua cidade!</p>
+            <img src="{% static 'img/correndo.webp' %}" alt="Crianças brincando no parque">
+        </div>
+
+        <h2 class="post-subtitle">3. Seja o exemplo</h2>
+        <p>Durante o seu desenvolvimento é muito comum que as crianças repitam hábitos que os adultos à sua volta realizam. Portanto, nada melhor para passar a mensagem da ecologia e da consciência ambiental do que ter atitudes que inspire os menores ao seu redor.
+
+        </p>
+
+        <h2 class="post-subtitle">4. Ensine brincando</h2>
+        <p>Para que a criança absorva e tenha vontade de colocar em prática o que aprendeu, é importante que o assunto não se torne uma coisa chata para ela. Inserir a ecologia e a consciência ambiental nas brincadeiras do cotidiano da criança é uma ótima opção para isso. Desenhos e programas infantis que abordam o tema, exposições interativas e peças de teatro que conversam diretamente com os pequenos e jogos com conteúdo educativo são exemplos de como fazer isso.</p>
+
+        <div class="image-text-container">
+            <img src="{% static 'img/globo.webp' %}" alt="Espetáculo O Mundo Imaginário">
+            <p>“O Mundo Imaginário” é um musical infantil que aborda a ecologia e a consciência ambiental de maneira lúdica e divertida. Além da experiência imediata, as músicas do espetáculo podem levar o aprendizado para o cotidiano do público infantil. 
+
+                Com essas dicas é possível prepararmos as próximas gerações para uma vida com mais equilíbrio com o meio ambiente e preservação da natureza.</p>
+        </div>
+
+        <p class="legenda">espetáculo "O Mundo Imaginário" </p>
+        <p class="legenda">com a grande terra que é passada pela platéia</p>
+    </div>
+
+    <div class="post-footer">
+        <a href="{% url 'blog' %}">Voltar</a>
+    </div>
+</div>
+
+{% endblock %}

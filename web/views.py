@@ -56,3 +56,31 @@ def contato_view(request):
 
 def blog_view(request):
     return render(request, 'blog.html')
+
+
+def post1_view(request):
+    return render(request, 'post1.html')
+
+
+def post2_view(request):
+    return render(request, 'post2.html')    
+
+
+def post3_view(request):
+    return render(request, 'post3.html')    
+
+
+def post4_view(request):
+    return render(request, 'post4.html')
+
+
+def post5_view(request):
+    return render(request, 'post5.html')
+
+def post6_view(request):
+    return render(request, 'post6.html')
+
+
+def post7_view(request):
+    return render(request, 'post7.html')
+
