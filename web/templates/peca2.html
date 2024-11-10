@@ -11,17 +11,18 @@
         align-items: center;
         background-color: #ecbc57; 
         color: #000000;
+        padding: 0;
     }
 
-    nav {
+    div.botao-voltar{
         width: 100%;
         text-align: center;
-        margin-top: 20px;
     }
 
-    .botao-voltar {
+    button.voltar{
         padding: 10px 20px;
-        background-color: #445651; 
+        background-color: #3050dc;
+        margin-top: 10px;
         color: #ffffff; 
         border: none;
         border-radius: 5px;
@@ -30,7 +31,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .botao-voltar:hover {
+    .voltar:hover {
         background-color: #00FFFF;
     }
 
@@ -76,99 +77,23 @@
         text-align: justify;
     }
 
-    .carrossel {
-        width: 30%;
-        text-align: center;
-        margin-top: 20px;
-        position: relative;
-    }
-
-    .carrossel img {
-        width: 30%;
-        display: none;
-    }
-
-    .carrossel img.active {
-        display: block;
-    }
-
-    .legenda {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 0.9em;
-        color: #000000; 
-    }
-
-    .prev, .next {
-        cursor: pointer;
-        margin: 15px;
-        padding: 10px 20px;
-        background-color: #4169E1;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-
-    .prev:hover, .next:hover {
-        background-color: #00FFFF;
-    }
 </style>
 
-    <nav>
+    <div class="botao-voltar">
         <a href="{% url 'espetaculos' %}">
-            <button class="botao-voltar">Voltar</button>
+            <button class="voltar">Voltar</button>
         </a>
-    </nav>
+    </div>
 
     <div class="conteudo">
         <div class="titulo">SOS Natureza</div> <!-- Título posicionado dentro da div e centralizado -->
         <div class="imagem">
-            <img src="sos.jpg" alt="Cartaz do Espetáculo" />
+            <img src="{% static 'img/sos.jpg' %}" alt="Cartaz do Espetáculo" />
         </div>
         <div class="texto">
             <p>O espetáculo propõe despertar a sensibilização do público infantil para questões ligadas à proteção dos animais exóticos que estão em extinção, de uma forma lúdica, utilizando canções de fácil memorização e que incentivam a conscientização. As apresentações criam um ambiente envolvente para que as crianças compreendam o valor da biodiversidade e a importância da preservação ambiental.</p>
             <p>Em um espetáculo encantador e educativo, cada cena busca não só entreter, mas também oferecer um momento de reflexão sobre a fauna e flora do nosso planeta, promovendo atitudes sustentáveis desde a infância.</p>
         </div>
     </div>
-
-    <div class="carrossel">
-        <img src="imagem.jpg" alt="Imagem 1" class="active">
-        <img src="imagem2.jpg" alt="Imagem 2">
-        <img src="imagem3.jpg" alt="Imagem 3">
-        <div class="legenda">Legenda da Imagem 1</div>
-        <div class="legenda" style="display: none;">Legenda da Imagem 2</div>
-        <div class="legenda" style="display: none;">Legenda da Imagem 3</div>
-
-        <button class="prev">Anterior</button>
-        <button class="next">Próximo</button>
-    </div>
-
-<script>
-    let currentIndex = 0;
-    const images = document.querySelectorAll('.carrossel img');
-    const legends = document.querySelectorAll('.legenda');
-
-    function updateCarousel() {
-        images.forEach((img, index) => {
-            img.classList.remove('active');
-            legends[index].style.display = 'none';
-        });
-        images[currentIndex].classList.add('active');
-        legends[currentIndex].style.display = 'block';
-    }
-
-    document.querySelector('.prev').addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-        updateCarousel();
-    });
-
-    document.querySelector('.next').addEventListener('click', () => {
-        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-    });
-
-    updateCarousel();
-</script>
 
 {%endblock %}
