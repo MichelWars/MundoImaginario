@@ -10,6 +10,8 @@
     }
 
 
+
+
     .post-container {
         max-width: 900px;
         margin: 5px auto;
@@ -88,7 +90,7 @@
 
     .post-content .image-text-container img {
         max-width: 40%;
-        margin-right: 20px;
+        margin:0px 10px 0px 10px;
         border-radius: 8px;
     }
 
@@ -122,50 +124,55 @@
 <div class="post-container">
 
     <div class="post-header">
-        <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Imagem de ecologia" >
+        <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="logo balaio d'arte">
         <div class="author-info">
             <span class="author-name">Balaio d'arte</span>
-            <span class="post-date">13 de fev. de 2019 • 2 minutos de leitura</span>
+            <span class="post-date">• 7 de dez. de 2018 • 2 minutos de leitura</span>
         </div>
     </div>
 
-    <h1 class="post-title">preencher</h1>
+    <h1 class="post-title">6 atividades para fazer com as crianças nas férias</h1>
 
     <div class="post-excerpt">
-        <p>preencher</p>
+        <p>Dezembro já chegou e com ele também chegam as férias escolares. Com as crianças em casa, as atividades e brincadeiras acabam se esgotando rapidamente e os pequenos podem ficar entediados e ansiosos.</p>
     </div>
 
     <div class="post-content">
-        <p>preencher</p>
+        <p>Com isso em mente, preparamos algumas dicas de atividades, programas e brincadeiras diferentes para a criançada se divertir muito nas férias!</p>
 
-        <h2 class="post-subtitle">preencher</h2>
+        <h2 class="post-subtitle">1. Curta um dia no parque </h2>
         <div class="image-text-container">
-            <img src="{% static 'img/sem_imagem.png' %}" alt="Crianças plantando árvores">
-            <p>preencher</p>
+            <img src="{% static 'img/curtaumdianoparque.webp' %}" alt="Crianças plantando árvores">
+            <p>Aproveite os dias mais longos e quentes do verão para curtir aquele parque mais próximo da sua casa. Você pode preparar um piquenique com os quitutes preferidos dos pequenos ou apostar nos esportes ao ar livre, bicicletas, patins e até skates.</p>
         </div>
 
-        <h2 class="post-subtitle">preencher</h2>
+        <h2 class="post-subtitle">2. Vá ao teatro</h2>
         <div class="image-text-container">
-            <p>preencher</p>
-            <img src="{% static 'img/sem_imagem.png' %}" alt="Crianças brincando no parque">
+            <p>Principalmente no período de férias escolares, os teatros costumam ter programações especiais para crianças. Desde espetáculos com bonecos, interativos até musicais, a oferta para o público infantil costuma ser variada e atender a diversas idades, oferecendo diversão para toda a família. Fique de olho e aproveite a oportunidade de fazer um programa diferente!</p>
+            <img src="{% static 'img/vaaoteatro.webp' %}" alt="Crianças brincando no parque" margin-left= "10px">
         </div>
 
-        <h2 class="post-subtitle">preencher</h2>
-        <p>preencher
+        <h2 class="post-subtitle">3. Aposte na simplicidade</h2>
+        <p>Passe um tempo observando o céu e brinque de enxergar formas nas nuvens. Conte uma história para as crianças. Faça um acampamento na sala. Muitas vezes, atividades simples e sem gasto podem ser as mais divertidas!</p>
 
-        </p>
-
-        <h2 class="post-subtitle">preencher</h2>
-        <p>preencher</p>
-
+        <h2 class="post-subtitle">4. Sessão Pipoca</h2>
         <div class="image-text-container">
-            <img src="{% static 'img/sem_imagem.png' %}" alt="Espetáculo O Mundo Imaginário">
-            <p>preencher</p>
-        </div>
-
-        <p class="legenda">preencher</p>
-        <p class="legenda">preencher</p>
+            <img src="{% static 'img/vaaocinema.webp' %}" alt="comendo pipoca no cinema">
+        <p>Escolha os filmes preferidos dos pequenos, reúna os amigos ou a família, estoure bastante pipoca e passe uma tarde se divertindo em uma sessão de cinema no sofá de casa.</p>
     </div>
+
+        <h2 class="post-subtitle">5. Cursos e aulas de férias</h2>
+        <div class="image-text-container">
+            <p>Seu filho quer experimentar um esporte ou uma atividade diferente? Aproveite esta época do ano! Matricule-o em atividades e cursos diferentes, voltados para o período de férias. Pode ser que ele descubra um novo prazer e leve adiante no ano que vem.</p>
+            <img src="{% static 'img/lutainfantil.webp' %}" alt="crianças lutando">
+        </div>
+
+        <h2 class="post-subtitle">6. Diário de férias</h2>
+        <div class="image-text-container">
+            <img src="{% static 'img/albumdefotos.webp' %}" alt="Espetáculo O Mundo Imaginário">
+            <p>Fotografe os momentos das férias, guarde ingressos, tickets, folhetos e prepare, junto com as crianças, um diário de férias. Será um ótimo passatempo e uma lembrança especial de momentos divertidos!</p>
+        </div>
+
 
     <div class="post-footer">
         <a href="{% url 'blog' %}">Voltar</a>

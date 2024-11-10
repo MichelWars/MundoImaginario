@@ -26,6 +26,10 @@ def peca2_view(request):
 def peca3_view(request):
     return render(request, 'peca3.html')
 
+
+def peca4_view(request):
+    return render(request, 'peca4.html')
+
 def midia_view(request):
     midia = Fotos.objects.filter(local=2)
     video = youtube_link_video.objects.all() 

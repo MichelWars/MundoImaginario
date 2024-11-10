@@ -28,6 +28,7 @@ urlpatterns = [
     path('peca1/', v.peca1_view, name='peca1'),
     path('peca2/', v.peca2_view, name='peca2'),
     path('peca3/', v.peca3_view, name='peca3'),
+    path('peca4/', v.peca4_view, name='peca4'),
     path('midia/', v.midia_view, name='midia'),
     path('teatro/', v.teatro_view, name='teatro'),
     path('escola/', v.escola_view, name='escola'),
