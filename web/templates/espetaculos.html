@@ -7,9 +7,10 @@
         box-sizing: border-box;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
+
     .wrapper {
         height: 99%;
         display: flex;
@@ -24,31 +25,32 @@
         border-radius: 8px;
         margin-top: 2px;
         margin-bottom: 2px;
-        
-        
     }
 
     .wrapper h1 {
         font-size: 3em;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
         padding: 5px 15px;
-        color: #ffff;
+        color: #fff;
     }
+
     .wrapper p {
         font-size: 1.2em;
         margin-bottom: 15px;
-        color: #ffff;
+        color: #fff;
     }
+
     .content-box {
         width: 100%;
-        max-width: 1200px;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
+        max-width: 900px; /* Reduz o máximo da largura para centralizar os cards */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Reduz a distância entre os cards */
+        justify-items: center;
     }
+
     .card {
-        width: 300px;
+        width: 270px; /* Reduz a largura em 10% */
         padding: 20px;
         border-radius: 5px;
         display: flex;
@@ -59,15 +61,18 @@
         align-items: center;
         margin-bottom: 5px;
     }
+
     .card h2 {
         margin-bottom: 10px;
         text-align: center;
     }
+
     .card p {
         color: #6c757d;
         text-align: justify;
         margin-bottom: 15px;
     }
+
     .card button {
         padding: 10px 20px;
         border: none;
@@ -77,45 +82,44 @@
         font-size: 1em;
         cursor: pointer;
         transition: 0.3s;
-        margin-top: auto; /* Empurra o botão para a parte inferior do card */
+        margin-top: auto;
     }
+
     .card button:hover {
         background-color: #0056b3;
     }
+
     .card:hover {
         background: linear-gradient(90deg, rgba(2,2,36,0.7) 0%, rgba(9,9,221,0.7) 35%, rgba(0,212,255,0.7) 100%);
         opacity: 0.8;
         color: #fff;
     }
+
     .card:hover p, .card:hover h2 {
         color: #fff;
     }
-    .card:nth-child(2):hover{
-        background: linear-gradient(90deg, rgba(2,2,36,0.7) 0%, rgba(9,9,221,0.7) 35%, rgba(0,212,255,0.7) 100%);
-    }
-    .card:nth-child(3):hover {
-        background: linear-gradient(90deg, rgba(2,2,36,0.7) 0%, rgba(9,9,221,0.7) 35%, rgba(0,212,255,0.7) 100%);
-    }
+
     @media (max-width: 991px) {
         .wrapper h1 {
             font-size: 2.5em;
         }
+
         .wrapper p {
             padding: 5px 15px;
         }
+
         .content-box {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             width: 100%;
             align-items: center;
         }
+
         .card {
-            min-width: 300px;
+            min-width: 270px;
             margin: 10px auto;
         }
     }
 </style>
-
-
 
 
         <div class="wrapper">
@@ -142,6 +146,13 @@
                         Revive jogos e brincadeiras tradicionais e modernas, oferecendo uma experiência interativa onde as crianças são convidadas a participar e se divertir com o elenco.
                     </p>
                     <button><a href="{% url 'peca3' %}">Saiba Mais</a></button>
+                </div>
+                <div class="card">
+                    <h2>Os Saltimbancos</h2>
+                    <p>
+                        Conta a história de quatro animais que, após fugirem de seus donos, formam um grupo musical em busca de liberdade. A peça aborda valores de união e solidariedade, mostrando como o coletivo pode superar dificuldades individuais.
+                    </p>
+                    <button><a href="{% url 'peca4' %}">Saiba Mais</a></button>
                 </div>
             </div>
         </div>
