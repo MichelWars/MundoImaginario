@@ -83,12 +83,12 @@
     .post-content .image-text-container {
         display: flex;
         align-items: flex-start;
-        margin: 20px 0;
+
     }
 
     .post-content .image-text-container img {
         max-width: 40%;
-        margin-right: 20px;
+        margin: 10px 20px 0px 20px;
         border-radius: 8px;
     }
 
@@ -117,59 +117,78 @@
         font-size: 10px;
         
     }
+
+    #l1{
+        margin-left: 50px;
+        margin-bottom: 30px ;
+        
+    }
+
+    #l2{
+        text-align: right;
+        margin-bottom: 50px ;
+        margin-right: 100px;
+    }
+
+    #l3{
+        margin-left: 50px;
+        margin-bottom: 20px;
+        
+    }
+
+    #l4{
+        text-align: center;
+    }
 </style>
 
 <div class="post-container">
 
     <div class="post-header">
-        <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="Imagem de ecologia" >
+        <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="logo balaio d'arte" >
         <div class="author-info">
             <span class="author-name">Balaio d'arte</span>
-            <span class="post-date">13 de fev. de 2019 • 2 minutos de leitura</span>
+            <span class="post-date">• 22 de out. de 2018 • 2 minutos de leitura</span>
         </div>
     </div>
 
-    <h1 class="post-title">preencher</h1>
-
-    <div class="post-excerpt">
-        <p>preencher</p>
-    </div>
+    <h1 class="post-title">Balaio D’arte estreia espetáculo interativo com desenhos animados</h1>
 
     <div class="post-content">
-        <p>preencher</p>
-
-        <h2 class="post-subtitle">preencher</h2>
+        <p>Em pleno mês das crianças, a companhia de produções artísticas Balaio D’arte estreou o seu novo espetáculo, “Cantando com desenhos”, em duas sessões especiais para alunos do Externato Santo Antônio, em São Caetano do Sul.</p>
+        
+        
         <div class="image-text-container">
-            <img src="{% static 'img/sem_imagem.png' %}" alt="Crianças plantando árvores">
-            <p>preencher</p>
+            <img src="{% static 'img/3888_2219_s_2.webp' %}" alt="Crianças plantando árvores" height="280px">
+            <p>O espetáculo reúne músicas de desenhos animados e utiliza projeções e bonecos que interagem com os atores e convidam as crianças a cantarem junto e a entrarem nesse mundo mágico. “A gente gosta de incluir sempre a participação, a interação das crianças. Ela não vai só para assistir, ela vai ali para viver um espetáculo que conversa com ela. Ela passa a ser uma figura integrante do espetáculo. Todos o nossos trabalhos são assim e esse não poderia ser diferente”, contou Beto Paschoal, ator da companhia e autor da nova atração.</p>
         </div>
-
-        <h2 class="post-subtitle">preencher</h2>
-        <div class="image-text-container">
-            <p>preencher</p>
-            <img src="{% static 'img/sem_imagem.png' %}" alt="Crianças brincando no parque">
-        </div>
-
-        <h2 class="post-subtitle">preencher</h2>
-        <p>preencher
-
-        </p>
-
-        <h2 class="post-subtitle">preencher</h2>
-        <p>preencher</p>
+        <p class="legenda" id="l1">Projeções e bonecos compõem o cenário. </p>
 
         <div class="image-text-container">
-            <img src="{% static 'img/sem_imagem.png' %}" alt="Espetáculo O Mundo Imaginário">
-            <p>preencher</p>
-        </div>
+            <p>A escolha do Externato Santo Antônio para a estreia não foi por acaso. A escola mantém a parceria com o grupo há alguns anos e se surpreendeu com a reação dos alunos. “Essas músicas dos desenhos animados, do folclore brasileiro, fazem parte do dia a dia de toda criança. É com essas músicas que elas aprendem as primeiras palavras. Acho que criança se sente valorizada e representada com esse espetáculo. Não foi um espetáculo para as crianças, foi um espetáculo com as crianças. Elas entraram, se identificaram, teve empatia mesmo”, afirmou Cleverson Amaro, professor que acompanhou as apresentações.Durante o espetáculo, o público entra em contato com clássicos como Pinóquio, a Pequena Sereia e Cinderella, mas não deixa de lado os desenhos mais atuais como o Show da Luna, Frozen e Minions.Em cena estão Beto Paschoal, Lais Böker e a bailarina convidada Gabriely Andersen. </p>
 
-        <p class="legenda">preencher</p>
-        <p class="legenda">preencher</p>
+            <img src="{% static 'img/1694_2404_s_2.webp' %}" alt="Crianças brincando no parque">
+        </div>
+        <p class="legenda" id="l2">Pinóquio também está no elenco da peça</p>
+
+
+        <div class="image-text-container"> 
+        <img src="{% static 'img/2334_1609_s_2.webp' %}" alt="Espetáculo O Mundo Imaginário">
+        <p> De acordo com a companhia, o roteiro ainda tem a intenção de mostrar a importância da música dentro do mundo cinematográfico “É a música que dá todo o clima de tensão, alegria ou até mesmo romance para a cena. E a gente percebe que as crianças se identificam muito, elas vivem isso. Principalmente com as imagens associadas com as músicas”, disse Lais Böker, atriz.</p>
+        </div>
+        <p class="legenda" id="l3">João, o boneco, é um dos personagens principais</p>
+
+        
+        <img src="{% static 'img/pipa.webp' %}" alt="Espetáculo O Mundo Imaginário">  
+        <p class="legenda" id="l4">Cantando com desenhos, com Beto Paschoal e Lais Böker</p>
+
+
     </div>
-
+    
     <div class="post-footer">
         <a href="{% url 'blog' %}">Voltar</a>
     </div>
+
 </div>
+
 
 {% endblock %}
