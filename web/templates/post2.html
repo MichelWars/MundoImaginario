@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+
+    p{
+        text-align: justify;
+        font-family: cursive;
+    }
+
+
+
+
+    .post-container {
+        max-width: 900px;
+        margin: 5px auto;
+        padding: 10px 50px 0px 50px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .post-header {
+        display: flex;
+        align-items: center; /* Alinha a imagem e o texto verticalmente */
+        justify-content: flex-start; /* Alinha tudo à esquerda */
+        gap: 10px; /* Controla a distância entre a imagem e o texto */
+        margin-bottom: 20px;
+ 
+    }
+
+    .post-header img {
+        
+        border-radius: 8px;
+        width: 40px;
+        height: 40px;
+        margin:0;
+
+    }
+
+    .author-info {
+        font-size: 14px;
+        color: #888;
+        margin:0;
+    }
+
+    .author-name {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .post-title {
+        font-size: 32px;
+        color: #333;
+        margin-top: 15px;
+        font-family: 'Pacifico';
+    }
+
+    .post-date {
+        color: #888;
+        font-size: 14px;
+    }
+
+    .post-excerpt, .post-content p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .post-content {
+        margin-top: 20px;
+    }
+
+    .post-subtitle {
+        font-size: 22px;
+        color: #333;
+        font-style: italic;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: justify;
+        font-family: 'Pacifico';
+    }
+
+    .post-content .image-text-container {
+        display: flex;
+        align-items: flex-start;
+        margin: 20px 0;
+    }
+
+    .post-content .image-text-container img {
+        max-width: 40%;
+        margin:0px 10px 0px 10px;
+        border-radius: 8px;
+    }
+
+    .post-footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .post-footer a {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .post-footer a:hover {
+        background-color: #0056b3;
+    }
+
+    p.legenda {
+        font-size: 10px;
+        
+    }
+</style>
+
+<div class="post-container">
+
+    <div class="post-header">
+        <img src="{% static 'img/Banner O Mundo 01b.jpg' %}" alt="logo balaio d'arte">
+        <div class="author-info">
+            <span class="author-name">Balaio d'arte</span>
+            <span class="post-date">• 7 de dez. de 2018 • 2 minutos de leitura</span>
+        </div>
+    </div>
+
+    <h1 class="post-title">6 atividades para fazer com as crianças nas férias</h1>
+
+    <div class="post-excerpt">
+        <p>Dezembro já chegou e com ele também chegam as férias escolares. Com as crianças em casa, as atividades e brincadeiras acabam se esgotando rapidamente e os pequenos podem ficar entediados e ansiosos.</p>
+    </div>
+
+    <div class="post-content">
+        <p>Com isso em mente, preparamos algumas dicas de atividades, programas e brincadeiras diferentes para a criançada se divertir muito nas férias!</p>
+
+        <h2 class="post-subtitle">1. Curta um dia no parque </h2>
+        <div class="image-text-container">
+            <img src="{% static 'img/curtaumdianoparque.webp' %}" alt="Crianças plantando árvores">
+            <p>Aproveite os dias mais longos e quentes do verão para curtir aquele parque mais próximo da sua casa. Você pode preparar um piquenique com os quitutes preferidos dos pequenos ou apostar nos esportes ao ar livre, bicicletas, patins e até skates.</p>
+        </div>
+
+        <h2 class="post-subtitle">2. Vá ao teatro</h2>
+        <div class="image-text-container">
+            <p>Principalmente no período de férias escolares, os teatros costumam ter programações especiais para crianças. Desde espetáculos com bonecos, interativos até musicais, a oferta para o público infantil costuma ser variada e atender a diversas idades, oferecendo diversão para toda a família. Fique de olho e aproveite a oportunidade de fazer um programa diferente!</p>
+            <img src="{% static 'img/vaaoteatro.webp' %}" alt="Crianças brincando no parque" margin-left= "10px">
+        </div>
+
+        <h2 class="post-subtitle">3. Aposte na simplicidade</h2>
+        <p>Passe um tempo observando o céu e brinque de enxergar formas nas nuvens. Conte uma história para as crianças. Faça um acampamento na sala. Muitas vezes, atividades simples e sem gasto podem ser as mais divertidas!</p>
+
+        <h2 class="post-subtitle">4. Sessão Pipoca</h2>
+        <div class="image-text-container">
+            <img src="{% static 'img/vaaocinema.webp' %}" alt="comendo pipoca no cinema">
+        <p>Escolha os filmes preferidos dos pequenos, reúna os amigos ou a família, estoure bastante pipoca e passe uma tarde se divertindo em uma sessão de cinema no sofá de casa.</p>
+    </div>
+
+        <h2 class="post-subtitle">5. Cursos e aulas de férias</h2>
+        <div class="image-text-container">
+            <p>Seu filho quer experimentar um esporte ou uma atividade diferente? Aproveite esta época do ano! Matricule-o em atividades e cursos diferentes, voltados para o período de férias. Pode ser que ele descubra um novo prazer e leve adiante no ano que vem.</p>
+            <img src="{% static 'img/lutainfantil.webp' %}" alt="crianças lutando">
+        </div>
+
+        <h2 class="post-subtitle">6. Diário de férias</h2>
+        <div class="image-text-container">
+            <img src="{% static 'img/albumdefotos.webp' %}" alt="Espetáculo O Mundo Imaginário">
+            <p>Fotografe os momentos das férias, guarde ingressos, tickets, folhetos e prepare, junto com as crianças, um diário de férias. Será um ótimo passatempo e uma lembrança especial de momentos divertidos!</p>
+        </div>
+
+
+    <div class="post-footer">
+        <a href="{% url 'blog' %}">Voltar</a>
+    </div>
+</div>
+
+{% endblock %}
