@@ -2,43 +2,64 @@
 {% load static %}
 {% block content %}
 
+<script>
+    const images = [
+        "{% static 'img/qs1.jpg' %}",
+        "{% static 'img/qs2.jpg' %}",
+        "{% static 'img/qs3.jpg' %}"
+    ];
+    let currentImageIndex = 0;
+
+    function openModal(index) {
+        currentImageIndex = index;
+        document.getElementById("modalImage").src = images[currentImageIndex];
+        document.getElementById("imageModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    function changeImage(direction) {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+        document.getElementById("modalImage").src = images[currentImageIndex];
+    }
+</script>
+
 <style>
-    body {
+    main {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f7f7f7;
         color: #333;
     }
 
-    header img {
-        max-width: 150px; /* Ajuste o tamanho da imagem */
-        margin-bottom: 20px;
+    main img {
+        width: 800px;
+        margin: 20px 0;
     }
-    header h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
+
     section {
         padding: 40px;
         max-width: 1000px;
-        margin: 0 auto;
-        background-color: white;
+        margin: 20px auto;
+        background-color: rgb(158, 0, 179);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 1%;
     }
-    h2 {
-        color: #333;
-        font-size: 2em;
-    }
+
     p {
         line-height: 1.6;
         font-size: 1.1em;
         margin-bottom: 20px;
+        color: yellow;
     }
+
     .highlight {
-        color: #e67e22;
+        color: rgb(0, 255, 0);
         font-weight: bold;
     }
+
     .cta {
         background-color: #e67e22;
         color: white;
@@ -47,30 +68,104 @@
         font-size: 1.2em;
         margin-top: 40px;
     }
+
+    span img.thumbnail {
+        width: 300px;
+        height: 300;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 80%;
+        max-height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .navigation .prev,
+    .navigation .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 24px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navigation .prev {
+        left: 10px;
+    }
+
+    .navigation .next {
+        right: 10px;
+    }
 </style>
 
-<body>
-
-
-<img src="{% static 'img/sem_imagem.png' %}" alt="Logo Mundo Imaginário - Balaio da Arte">
-
-
+<img src="{% static 'img/Logo Balaio.png' %}" alt="Logo Mundo Imaginário - Balaio da Arte">
 
 <section>
-<h2>Mundo Imaginário - Balaio da Arte</h2>
-<p>Somos o <span class="highlight">Mundo Imaginário - Balaio da Arte</span>, um grupo de produções artísticas que atua desde 2011, com o objetivo de levar espetáculos voltados para o público infantil. Nossos espetáculos são estrelados pelos talentosos artistas <strong>Beto Paschoal</strong> e <strong>Lais Böker</strong>, que conduzem as crianças por mundos mágicos e repletos de aprendizado.</p>
+    <p>Somos um grupo de produções artísticas que atua desde 2011, com o objetivo de levar espetáculos voltados para o público infantil. Nossos espetáculos são estrelados pelos talentosos artistas <strong>Beto Paschoal</strong> e <strong>Lais Böker</strong>, que conduzem as crianças por mundos mágicos e repletos de aprendizado.</p>
+    <p>O tema central de nossos trabalhos gira em torno da <span class="highlight">ecologia</span>, da <span class="highlight">preservação da natureza</span>, das relações com a família e os animais, e de temas que fazem parte do universo infantil, como brincadeiras, imaginação e sonhos. Cada espetáculo é pensado para despertar a reflexão e proporcionar momentos de diversão e aprendizado para todas as idades.</p>
+    <p>Além das apresentações abertas ao público, temos o prazer de levar nossos shows para <span class="highlight">escolas</span> e <span class="highlight">instituições</span>, buscando enriquecer o ambiente educacional e promover um contato direto com a arte. Nosso compromisso é não apenas entreter, mas também contribuir para a formação de uma consciência ambiental e social nas crianças, através da arte e da cultura.</p>
+    <p>Acreditamos no poder transformador da arte e em sua capacidade de conectar as pessoas, promovendo a empatia e o respeito pelo meio ambiente e pelas relações humanas.</p>
 
-<p>O tema central de nossos trabalhos gira em torno da <span class="highlight">ecologia</span>, da <span class="highlight">preservação da natureza</span>, das relações com a família e os animais, e de temas que fazem parte do universo infantil, como brincadeiras, imaginação e sonhos. Cada espetáculo é pensado para despertar a reflexão e proporcionar momentos de diversão e aprendizado para todas as idades.</p>
-
-<p>Além das apresentações abertas ao público, temos o prazer de levar nossos shows para <span class="highlight">escolas</span> e <span class="highlight">instituições</span>, buscando enriquecer o ambiente educacional e promover um contato direto com a arte. Nosso compromisso é não apenas entreter, mas também contribuir para a formação de uma consciência ambiental e social nas crianças, através da arte e da cultura.</p>
-
-<p>Acreditamos no poder transformador da arte e em sua capacidade de conectar as pessoas, promovendo a empatia e o respeito pelo meio ambiente e pelas relações humanas.</p>
-
-<div class="cta">
-    <p>Venha fazer parte do Mundo Imaginário com a gente! Acompanhe nossos espetáculos e atividades!</p>
-</div>
+    <div class="cta">
+        <p>Venha fazer parte do Mundo Imaginário com a gente! Acompanhe nossos espetáculos e atividades!</p>
+    </div>
 </section>
 
-</body>
+
+<span>Nossa Equipe</span>
+<!-- Miniaturas das Imagens -->
+<span>
+    <img src="{% static 'img/qs1.jpg' %}" alt="" class="thumbnail" onclick="openModal(0)">
+    <img src="{% static 'img/qs2.jpg' %}" alt="" class="thumbnail" onclick="openModal(1)">
+    <img src="{% static 'img/qs3.jpg' %}" alt="" class="thumbnail" onclick="openModal(2)">
+</span>
+
+<!-- Modal para Visualização Expandida -->
+<div id="imageModal" class="modal-overlay">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <div class="modal-content">
+        <img id="modalImage" src="{% static 'img/qs1.jpg' %}" alt="">
+        <div class="navigation">
+            <button class="prev" onclick="changeImage(-1); event.stopPropagation();">❮</button>
+            <button class="next" onclick="changeImage(1); event.stopPropagation();">❯</button>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
