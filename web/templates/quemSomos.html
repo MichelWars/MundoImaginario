@@ -1,6 +1,76 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<h1>Quem Somos</h1>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+        color: #333;
+    }
+
+    header img {
+        max-width: 150px; /* Ajuste o tamanho da imagem */
+        margin-bottom: 20px;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    section {
+        padding: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        color: #333;
+        font-size: 2em;
+    }
+    p {
+        line-height: 1.6;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+    .highlight {
+        color: #e67e22;
+        font-weight: bold;
+    }
+    .cta {
+        background-color: #e67e22;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 40px;
+    }
+</style>
+
+<body>
+
+
+<img src="{% static 'img/sem_imagem.png' %}" alt="Logo Mundo Imaginário - Balaio da Arte">
+
+
+
+<section>
+<h2>Mundo Imaginário - Balaio da Arte</h2>
+<p>Somos o <span class="highlight">Mundo Imaginário - Balaio da Arte</span>, um grupo de produções artísticas que atua desde 2011, com o objetivo de levar espetáculos voltados para o público infantil. Nossos espetáculos são estrelados pelos talentosos artistas <strong>Beto Paschoal</strong> e <strong>Lais Böker</strong>, que conduzem as crianças por mundos mágicos e repletos de aprendizado.</p>
+
+<p>O tema central de nossos trabalhos gira em torno da <span class="highlight">ecologia</span>, da <span class="highlight">preservação da natureza</span>, das relações com a família e os animais, e de temas que fazem parte do universo infantil, como brincadeiras, imaginação e sonhos. Cada espetáculo é pensado para despertar a reflexão e proporcionar momentos de diversão e aprendizado para todas as idades.</p>
+
+<p>Além das apresentações abertas ao público, temos o prazer de levar nossos shows para <span class="highlight">escolas</span> e <span class="highlight">instituições</span>, buscando enriquecer o ambiente educacional e promover um contato direto com a arte. Nosso compromisso é não apenas entreter, mas também contribuir para a formação de uma consciência ambiental e social nas crianças, através da arte e da cultura.</p>
+
+<p>Acreditamos no poder transformador da arte e em sua capacidade de conectar as pessoas, promovendo a empatia e o respeito pelo meio ambiente e pelas relações humanas.</p>
+
+<div class="cta">
+    <p>Venha fazer parte do Mundo Imaginário com a gente! Acompanhe nossos espetáculos e atividades!</p>
+</div>
+</section>
+
+</body>
 
 {% endblock %}

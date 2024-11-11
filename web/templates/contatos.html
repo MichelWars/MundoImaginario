@@ -3,93 +3,115 @@
 {% block content %}
 
 <style>
-div.corpo {
-    width: 70%;
-    background-color: rgb(0, 255, 242);
-    padding: 20px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha todos os itens à esquerda */
-}
+    main {
+        display: flex;
+        flex-direction: row;
+    }
 
-.section {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0px;
-    gap: 10px;
-}
+    .corpo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        width: 70%;
+        padding-left: 10%;
+        
+    }
 
-.linha {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre a imagem e o texto */
-}
+    .bloco {
+        display: flex;
+        flex-direction: column;
+        margin: 1px;
+        background-color: transparent;
+        min-width: 380px;
+        padding-right:10px;
+        padding-left: 10px;
+    }
 
-.linha img {
-    flex-shrink: 0; /* Garante que a imagem mantenha seu tamanho */
-    width: 80px;
-    height: 80px;
-}
+    .icon-container {
+        display: flex;
+        flex-direction: row; /* Ícone e texto na mesma linha */
+        margin-bottom: 10px;
+        margin-left: 1px;
+    }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
+    .icon-container a {
+        display: flex;
+        align-items: center; /* Alinha o texto verticalmente ao centro do ícone */
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        
+    }
+
+    .icon-container img {
+        width: 100px;
+        height: 100px;
+        margin-right: 1px;
+        margin-left: 1px;
+    }
+
+    .bloco p {
+        padding-right: 200px;
+        font-size:x-large;
+        font-weight: bold;
+        font-family: pacifico;
+    }
+
+    a:hover{
+        color:darkmagenta;
+    }
 </style>
 
 <div class="corpo">
-    <div class="section">
-        <h6>Nossos Contatos:</h6>
-        <div class="linha">
+    <div class="bloco">
+        <p>Contatos:</p>
+        <div class="icon-container">
             <a href="tel:5511995465227">
                 <img src="{% static 'img/call_icon.png' %}" alt="Call Icon">
-                (11)995465227
+                <span>Telefone:<br> (11)99546-5227</span>
             </a>
         </div>
-        <div class="linha">
+        <div class="icon-container">
             <a href="https://wa.me/5511995988422?text=Olá,%20tenho%20interesse%20em%20saber%20mais%20sobre%20o%20seu%20trabalho." target="_blank">
                 <img src="{% static 'img/whats.png' %}" alt="WhatsApp Icon">
-                (11)995988422
+                <span>WhatsApp:<br> +5511995988422</span>
             </a>
         </div>
-        <div class="linha">
+        <div class="icon-container">
             <a href="mailto:balaiodarte@yahoo.com.br" target="_blank">
                 <img src="{% static 'img/email.png' %}" alt="Email Icon">
-                balaiodarte@yahoo.com.br
-            </a>
-        </div>
-
-        <h6>Siga nossas redes sociais e mídias:</h6>
-        <div class="linha">
-            <a href="https://www.facebook.com/omundoimaginariooficial/" target="_blank">
-                <img src="{% static 'img/face.png' %}" alt="Facebook Icon">
-                omundoimaginariooficial
-            </a>
-        </div>
-        <div class="linha">
-            <a href="https://www.instagram.com/omundoimaginariooficial/" target="_blank">
-                <img src="{% static 'img/insta.jfif' %}" alt="Instagram Icon">
-                omundoimaginariooficial
-            </a>
-        </div>
-        
-        
-        <div class="linha">
-            <a href="https://open.spotify.com/intl-pt/album/3Kb8mnY1vkZYnEN4ssOyDs?si=rHHHGohvSX-pGjucyM3Rqg" target="_blank">
-                <img src="{% static 'img/spot.jpg' %}" alt="Spotify Icon">
-                Escute nossas músicas no Spotify
-            </a>
-        </div>
-        <div class="linha">
-            <a href="https://www.youtube.com/user/OMundoImaginario" target="_blank">
-                <img src="{% static 'img/yout.png' %}" alt="YouTube Icon">
-                Nos assista no YouTube
+                <span>Email:<br> balaiodarte@yahoo.com.br</span>
             </a>
         </div>
     </div>
     
+    <div class="bloco">
+        <p>Redes Sociais e midias:</p>
+        <div class="icon-container">
+            <a href="https://www.facebook.com/omundoimaginariooficial/" target="_blank">
+                <img src="{% static 'img/face.png' %}" alt="Facebook Icon">
+                <span>Facebook:<br> @omundoimaginariooficial</span>
+            </a>
+        </div>
+        <div class="icon-container">
+            <a href="https://www.instagram.com/omundoimaginariooficial/" target="_blank">
+                <img src="{% static 'img/insta.jfif' %}" alt="Instagram Icon">
+                <span>Instagram<br> @omundoimaginariooficial</span>
+            </a>
+        </div>
+        <div class="icon-container">
+            <a href="https://open.spotify.com/intl-pt/album/3Kb8mnY1vkZYnEN4ssOyDs?si=rHHHGohvSX-pGjucyM3Rqg" target="_blank">
+                <img src="{% static 'img/spot.jpg' %}" alt="Spotify Icon" >
+                <span>Conheaça nosso album<br> no Spotify</span>
+            </a>
+        </div>
+        <div class="icon-container">
+            <a href="https://www.youtube.com/user/OMundoImaginario" target="_blank">
+                <img src="{% static 'img/yout.png' %}" alt="YouTube Icon">
+                <span>Siga nosso canal no <br>YouTube: @OMundoImaginario</span>
+            </a>
+        </div>
+    </div>
 </div>
-
 {% endblock %}
