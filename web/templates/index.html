@@ -3,29 +3,33 @@
 {% load static %}
 
 
-
-    <style>
-
-        h1.index{
-            color: rgb(0, 0, 0);
-            width: 50%;
-            font-size: 20px;
-            text-align: center;
-
+<style>
+    
+    h1.index{
+        color: rgb(0, 0, 0);
+        width: 80%;
+        font-size: 26px;
+        text-align: center;
+        
+    }
+    
+    div.iframe{
+        display: block;
+        justify-content: center; /* Centraliza horizontalmente */
         }
-
-        div.iframe{
-            display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-        }
-
-
-   
+        
+    div.container{
+        width: 50%;
+        background-color: rgb(158, 0, 179);;
+    
+    }
+        
     </style>
     
-
-
-    <div >
+    <div class="container">
+    
+    
+    
         <h1 class="index">
             <div>
                 <img src="{% static 'img/logoMI.webp' %}" alt="logo" >
@@ -34,12 +38,17 @@
             trata questões ligadas a conservação do meio ambiente, 
             diversidade, ecologia e a importância da imaginação 
             por meio de canções divertidas e de fácil memorização.
-    </h1>
-    <!-- Player spotfy -->
-    <div class="iframe">
-         <iframe style="border-radius:12px; margin: 10 auto;" src="https://open.spotify.com/embed/album/3Kb8mnY1vkZYnEN4ssOyDs?utm_source=generator&theme=0" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-     </div>
-</div>
+        </h1>
 
+        <p><br>Assista ao teaser do espetáculo:<br></p>
+        <!-- Player spotfy -->
+        
+        <iframe style="border-radius:12px; margin: 10 auto;" width="695" height="400" src="https://www.youtube.com/embed/uDlM52OhPrM?si=h9YuCoVXCvtBu61X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="iframe">
+            <iframe style="border-radius:12px; margin: 10 auto;" src="https://open.spotify.com/embed/album/3Kb8mnY1vkZYnEN4ssOyDs?utm_source=generator&theme=0" width="700" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            
+        </div>
+
+    </div>
 
 {% endblock %}
