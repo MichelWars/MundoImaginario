@@ -24,33 +24,50 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         width: 100%;/* Largura em percentual da pagina*/
-        background-color: rgb(40, 2, 255);/*cor de fundo, pode se definir em nome da cor em ingles, codigo rgd(,,) ou codigo hexadecimal */
-        color: rgb(0, 85, 254);/*Cor do texto */
-        padding-left: 5%;/*Espaço entre o texto e a borda esquerda definido em pixels ou percentual*/
+        color: yellow;/*Cor do texto */
         box-sizing: border-box;/* impede que o tamnho da caixa mude quando se defide espaços nas bordas*/
-        font-family: 'Pacifico', arial; /* Aplica fonte importada */
-        font-size:30px;
+        font-family: 'Pacifico', cursive; /* Aplica fonte importada */
+        font-style:italic;
+        font-size:26px;
         text-align: center;
+        text-shadow: 0.2em 0.2em 0.3em black;
+        -webkit-text-stroke-width: 0.1px; /* largura da borda */
+        -webkit-text-stroke-color: rgb(6, 0, 118);
+        letter-spacing: 5px;
+        padding: 0px;
+        margin: 0px;
+        
     }
+
 
     nav{/*Efeitos da caixa de navegação */
         width: 100%;
-        background-color:  #00aeff;
+        background-color:  rgb(0, 174, 255);
         padding: 10px;/*define espaço entre o texto e as 3 bordas(left,top,bottom) */
         box-sizing: border-box;
         font-family: 'Pacifico', cursive;
         display: flex;/*cria um display flexivel para usar a função align-items*/
         align-items: center;/* define o espaço entre os itens (centralziado)*/
         z-index:10;
+        font-size: 26px;
+        font-family: 'Pacifico', cursive;
+        color: yellow;
+        text-shadow: 0.2em 0.2em 0.3em black;
+        
+        
+        
         
     
     }
     
     button.botao{
         background-color: #00aeff;
-        color: white;
+        color: yellow;
+        font-family: 'pacifico', cursive;
+        font-size: 26px;
         border:none;
-        font-family: 'Pacifico', cursive;
+        text-shadow: 0.2em 0.2em 0.3em black;
+
     }
     
     
@@ -58,9 +75,13 @@
     
     footer{/*efeitos no rodapé */
         width: 100%;
-        height: 35px;
+        height: 40px;
         background-color: #00aeff;
         color: black;
+        font-family: cursive;
+        font-size: 25px;
+        font-weight: bold;
+
     }
     *{/* O asterisco indica que todos os campos seram afetados pelo comando */
         margin: 0px auto;/* define o espaço das margens em pixel */
@@ -69,8 +90,8 @@
     div.submenu{
         display: none; /*oculta o sub menu div*/
         position:absolute; /*abre o submenu sem expandir o container nav*/
-        background-color: grey;
-        font-family: 'Pacifico', cursive;
+        background-color: rgb(0, 174, 255, 0.7);
+
         z-index:10;
     
     }
@@ -88,28 +109,28 @@
         text-decoration: none;
         padding: 5px 10px;
         font-size:20px;
-        box-shadow:8px 8px 10px 5px rgba(0,0,0,0.7);
+        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.9);
         z-index:10;
     }
     div.submenu a:hover{
         background-color:blueviolet;
-        font-size:20px;
+        font-size:26px;
         z-index:10;
     
     
     }
     div.menu a:hover{
-        background-color:blueviolet;
-        font-size:20px;
+        background-color:rgb(158, 0, 179);
+        font-size:26px;
         z-index:10;
     
     }
     div.menu a {
         display:block; /*Mostra os links um embaixo do outro*/
-        color:green;
+        color:Yellow;
         text-decoration: none;
-        padding: 5px 10px;
-        font-size:20px;
+        padding: 0px 10px;
+        font-size:26px;
         z-index:10;
         
     }
@@ -119,7 +140,7 @@
     
     button.botao, div.submenu{
         min-width: 120px;
-        font-size:20px;
+        
         z-index:10;
     
     }
@@ -127,6 +148,7 @@
     div.menu{
         display: inline-block;
         z-index: index 10;
+        
     
     }
     
@@ -142,12 +164,15 @@
         max-width: 100%; /* Limita o footer à largura da página */
         box-sizing: border-box; /* Inclui padding e border na largura total */
         margin: 0 auto; /* Centraliza o footer na página */
-    
+        
     }
     
     .footer-section {
         display: flex;
-        gap: 5px;                     /* Espaçamento entre ícones e texto */
+        gap: 5px;  
+        align-items: center;
+        flex-direction: row;
+        text-align: center;                   /* Espaçamento entre ícones e texto */
     }
     
     .footer-section span {
@@ -156,6 +181,7 @@
 </style>
 
     <head>
+        <link rel="icon" href="{% static 'img/Banner O Mundo 01b.jpg' %}" type="image/x-icon">
         <title>O Mundo Imaginario</title><!-- -->
         <meta charset="UTF-8"><!--Define o padrão de escrita para ask2 (idiomas latinos com acentuação)-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -170,8 +196,11 @@
 
 
         <header><!--Cabeçalho do corpo -->
+            <div><h1 class="header">Balaio D'Arte apresenta:</h1></div>
             <div><h1 class="header">Mundo Imaginario - O Musical!</h1></div><!--Titulo -->
         </header>
+        
+        
         <nav><!--Barra/container/caixa de navegação -->
             <div class="menu">
                 <a href="{% url 'home' %}">Home</a><!--cria um botao para armazenar sub menu --></div>
@@ -194,14 +223,14 @@
            <div class="menu"> <a href="{% url 'blog' %}">Blog</a></div>
         </nav>
 
-        <main><!--Caixa Principal -->
+        <main><!--Conteudo Principal -->
         {% block content %}
 
         {% endblock %}
         </main>
  
         <footer class="footer-container">
-            <div>© 2024 | Balaio D'arte</div>
+            <div class="footer-section">© 2024 | Balaio D'arte</div>
             
             <div class="footer-section">
                 <span>Redes Sociais:</span>
