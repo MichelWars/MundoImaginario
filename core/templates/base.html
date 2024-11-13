@@ -1,184 +1,170 @@
 {% load static %}
 
 <style>
+    /* Estilos Globais */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Estilos para o elemento Main */
     main {
-        background-image: url("{% static 'img/baleia.png' %}"); /* Certifique-se de que o caminho esteja correto */
+        background-image: url("{% static 'img/baleia.png' %}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed; /* Fixe o fundo para evitar que ele role com a página */
-        color: #000; /* Cor do texto de corpo */
+        background-attachment: fixed;
+        color: #000;
         width: 100%;
-        min-height: 100%;
-        align-items: center;
-        text-align: center;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
-
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
 
+    /* Estilos para o Header */
     header {
-        background-image: url("{% static 'img/baleia.png' %}"); /* Certifique-se de que o caminho esteja correto */
-        background-size:cover;
+        background-image: url("{% static 'img/baleia.png' %}");
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        width: 100%;/* Largura em percentual da pagina*/
-        color: yellow;/*Cor do texto */
-        box-sizing: border-box;/* impede que o tamnho da caixa mude quando se defide espaços nas bordas*/
-        font-family: 'Pacifico', cursive; /* Aplica fonte importada */
-        font-style:italic;
-        font-size:26px;
+        color: yellow;
+        font-family: 'Pacifico', cursive;
+        font-size: 1rem;
         text-align: center;
         text-shadow: 0.2em 0.2em 0.3em black;
-        -webkit-text-stroke-width: 0.1px; /* largura da borda */
+        -webkit-text-stroke-width: 0.1px;
         -webkit-text-stroke-color: rgb(6, 0, 118);
         letter-spacing: 5px;
-        padding: 0px;
-        margin: 0px;
-        
+        padding: 20px 0;
     }
 
-
-    nav{/*Efeitos da caixa de navegação */
+    /* Estilos para o Menu de Navegação */
+    nav {
         width: 100%;
-        background-color:  rgb(0, 174, 255);
-        padding: 10px;/*define espaço entre o texto e as 3 bordas(left,top,bottom) */
-        box-sizing: border-box;
+        background-color: rgb(0, 174, 255);
+        padding: 15px 10px;
         font-family: 'Pacifico', cursive;
-        display: flex;/*cria um display flexivel para usar a função align-items*/
-        align-items: center;/* define o espaço entre os itens (centralziado)*/
-        z-index:10;
-        font-size: 26px;
-        font-family: 'Pacifico', cursive;
+        font-size: 1.5rem;
         color: yellow;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         text-shadow: 0.2em 0.2em 0.3em black;
-        
-        
-        
-        
-    
     }
-    
-    button.botao{
+
+    /* Estilos para o Botão */
+    button.botao {
         background-color: #00aeff;
         color: yellow;
-        font-family: 'pacifico', cursive;
-        font-size: 26px;
-        border:none;
+        font-family: 'Pacifico', cursive;
+        font-size: 1.2rem;
+        border: none;
+        padding: 5px 15px;
         text-shadow: 0.2em 0.2em 0.3em black;
-
+        cursor: pointer;
     }
-    
-    
-    
-    
-    footer{/*efeitos no rodapé */
-        width: 100%;
-        height: 40px;
+
+    /* Estilos para os Links no Menu */
+    nav .menu a, .submenu a {
+        color: yellow;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease, font-size 0.3s ease;
+    }
+
+    /* Submenu e Exibição ao Passar o Mouse */
+    div.submenu {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 174, 255, 0.8);
+        z-index: 10;
+        padding: 10px 0;
+    }
+
+    div.menu:hover .submenu {
+        display: block;
+    }
+
+    .submenu a:hover, .menu a:hover {
+        background-color: blueviolet;
+        font-size: 1.1rem;
+    }
+
+    div.submenu a {
+        display:block; /*Mostra os links um embaixo do outro*/
+        
+        text-decoration: none;
+        padding: 5px 10px;
+        font-size:1rem;
+        box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.9);
+        z-index:10;
+    }
+
+    /* Estilos para o Footer */
+    footer {
         background-color: #00aeff;
         color: black;
         font-family: cursive;
-        font-size: 25px;
+        font-size: 0.7rem;
         font-weight: bold;
+        width: 100%;
+        padding: 5px 0;
+    }
 
-    }
-    *{/* O asterisco indica que todos os campos seram afetados pelo comando */
-        margin: 0px auto;/* define o espaço das margens em pixel */
-    }
-    
-    div.submenu{
-        display: none; /*oculta o sub menu div*/
-        position:absolute; /*abre o submenu sem expandir o container nav*/
-        background-color: rgb(0, 174, 255, 0.7);
-
-        z-index:10;
-    
-    }
-    
-    div.menu:hover div.submenu{
-        display: block; /*Exibe o item que esta oculto quando passar o mouse por cima*/
-        z-index:10;
-        
-    
-    }
-    
-    div.submenu a {
-        display:block; /*Mostra os links um embaixo do outro*/
-        color:black;
-        text-decoration: none;
-        padding: 5px 10px;
-        font-size:20px;
-        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.9);
-        z-index:10;
-    }
-    div.submenu a:hover{
-        background-color:blueviolet;
-        font-size:26px;
-        z-index:10;
-    
-    
-    }
-    div.menu a:hover{
-        background-color:rgb(158, 0, 179);
-        font-size:26px;
-        z-index:10;
-    
-    }
-    div.menu a {
-        display:block; /*Mostra os links um embaixo do outro*/
-        color:Yellow;
-        text-decoration: none;
-        padding: 0px 10px;
-        font-size:26px;
-        z-index:10;
-        
-    }
-    
-    
-    
-    
-    button.botao, div.submenu{
-        min-width: 120px;
-        
-        z-index:10;
-    
-    }
-    
-    div.menu{
-        display: inline-block;
-        z-index: index 10;
-        
-    
-    }
-    
-    div.submenu{
-        position: absolute;
-        z-index:10;
-    }
-    
     .footer-container {
         display: flex;
-        justify-content: space-around; /* Espaço uniforme entre as seções */
-        padding: 5px;
-        max-width: 100%; /* Limita o footer à largura da página */
-        box-sizing: border-box; /* Inclui padding e border na largura total */
-        margin: 0 auto; /* Centraliza o footer na página */
-        
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
     }
-    
+
     .footer-section {
         display: flex;
-        gap: 5px;  
         align-items: center;
-        flex-direction: row;
-        text-align: center;                   /* Espaçamento entre ícones e texto */
+        gap: 10px;
+        font-size: 1.1em;
     }
-    
-    .footer-section span {
-        margin-right: 5px;             /* Espaçamento entre o texto e os ícones */
+
+    .footer-section img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Responsividade para Telas Menores */
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            font-size: 1.2rem;
+        }
+
+        nav .menu, .submenu {
+            width: 100%;
+            text-align: center;
+        }
+
+        header {
+            font-size: 1.5rem;
+            padding: 15px;
+        }
+
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .footer-section {
+            font-size: 0.7rem;
+        }
     }
 </style>
+
 
     <head>
         <link rel="icon" href="{% static 'img/Banner O Mundo 01b.jpg' %}" type="image/x-icon">

@@ -6,15 +6,15 @@
     main {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .corpo span {
         color: rgb(0, 0, 0);
         -webkit-text-stroke-width: 2px; 
-        -webkit-text-stroke-color: rgba(0, 255, 0, 0.5) 
-        
+        -webkit-text-stroke-color: rgba(0, 255, 0, 0.5);
     }
-
 
     .corpo {
         display: flex;
@@ -22,10 +22,10 @@
         justify-content: center;
         background-color: transparent;
         width: 70%;
-        padding-left: 10%;
+
         color: black;
         -webkit-text-stroke-width: 0.1px; 
-        -webkit-text-stroke-color: yellow 
+        -webkit-text-stroke-color: yellow;
         
     }
 
@@ -34,9 +34,8 @@
         flex-direction: column;
         margin: 1px;
         background-color: transparent;
-        min-width: 380px;
-        padding-right:10px;
-        padding-left: 10px;
+
+
     }
 
     .icon-container {
@@ -52,25 +51,65 @@
         text-decoration: none;
         color: black;
         font-weight: bold;
-        
     }
 
     .icon-container img {
         width: 100px;
         height: 100px;
-        margin-right: 1px;
-        margin-left: 1px;
+
     }
 
     .bloco p {
-        padding-right: 200px;
-        font-size:x-large;
+        
+        font-size: x-large;
         font-weight: bold;
         font-family: pacifico;
     }
 
-    span:hover{
-        color:yellow;
+    span:hover {
+        color: yellow;
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+        .corpo {
+            width: 90%;
+            padding-left: 5%;
+        }
+
+        .bloco {
+            min-width: 40%;
+        }
+
+        .bloco p {
+            font-size: large;
+        }
+
+        .icon-container img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .corpo {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        .bloco {
+            min-width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .bloco p {
+            font-size: medium;
+        }
+
+        .icon-container img {
+            width: 70px;
+            height: 70px;
+        }
     }
 </style>
 
@@ -98,7 +137,7 @@
     </div>
     
     <div class="bloco">
-        <p>Redes Sociais e midias:</p>
+        <p>Redes Sociais e mídias:</p>
         <div class="icon-container">
             <a href="https://www.facebook.com/omundoimaginariooficial/" target="_blank">
                 <img src="{% static 'img/face.png' %}" alt="Facebook Icon">
@@ -113,8 +152,8 @@
         </div>
         <div class="icon-container">
             <a href="https://open.spotify.com/intl-pt/album/3Kb8mnY1vkZYnEN4ssOyDs?si=rHHHGohvSX-pGjucyM3Rqg" target="_blank">
-                <img src="{% static 'img/spot.jpg' %}" alt="Spotify Icon" >
-                <span>Conheaça nosso album<br> no Spotify</span>
+                <img src="{% static 'img/spot.jpg' %}" alt="Spotify Icon">
+                <span>Conheça nosso album<br> no Spotify</span>
             </a>
         </div>
         <div class="icon-container">
@@ -125,4 +164,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

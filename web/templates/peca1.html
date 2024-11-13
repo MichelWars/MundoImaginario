@@ -3,24 +3,13 @@
 {% block content %}
 
 <style>
-    body{
-        font-family: sans-serif;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgb(30, 142, 198); 
-        color: #000000;
-        padding: 0;
-    }
-
-    div.botao-voltar{
+    /* Estilos gerais */
+    div.botao-voltar {
         width: 100%;
         text-align: center;
-
     }
 
-    button.voltar{
+    button.voltar {
         padding: 10px 20px;
         background-color: #3050dc;
         margin-top: 10px;
@@ -33,10 +22,10 @@
     }
 
     .voltar:hover {
-        background-color: #00FFFF;
+        background-color: yellow;
     }
 
-    .titulo{
+    .titulo {
         font-size: 2em;
         font-weight: bold;
         color: #3050dc; 
@@ -45,17 +34,17 @@
         text-shadow: -1px -1px 0 #ffff00, 1px -1px 0 #ffff00, -1px 1px 0 #ffff00, 1px 1px 0 #ffff00; 
     }
 
-    .conteudo{
+    .conteudo {
         display: flex;
         justify-content: space-between;
-        width: 50%; 
+        width: 60%; /* Alterado para garantir que o conteúdo ocupe 100% da largura disponível */
         margin: 20px 0;
         padding: 20px;
         border-radius: 10px;
-        background-color: rgb(127, 180, 220,0.5); 
+        background-color: rgb(127, 180, 220, 0.5); 
         border: 1px solid #e1d781; 
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        color: #000000; 
+        color: #000000;
     }
 
     .imagem {
@@ -63,7 +52,7 @@
     }
 
     .imagem img {
-        width: 80%;
+        width: 100%; /* Garantir que a imagem ocupe 100% da largura da div */
         height: auto;
         border: 2px solid #000000;
         border-radius: 10px;
@@ -72,6 +61,7 @@
     .texto {
         width: 50%;
         text-align: justify;
+        font-size: 1em;
     }
 
     .carrossel {
@@ -82,7 +72,7 @@
     }
 
     .carrossel img {
-        width: 50%; 
+        width: 100%; 
         display: none;
     }
 
@@ -111,41 +101,87 @@
     .prev:hover, .next:hover {
         background-color: #00FFFF;
     }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+        .conteudo {
+            flex-direction: column; /* Mudando para coluna em telas menores */
+            align-items: center; /* Alinhando centralmente */
+        }
+
+        .imagem, .texto {
+            width: 100%; /* Faz as divs ocuparem toda a largura */
+            margin-bottom: 20px;
+        }
+
+        .carrossel {
+            width: 100%; /* Faz o carrossel ocupar 100% da largura */
+            margin-top: 20px;
+        }
+
+        .titulo {
+            font-size: 1.5em; /* Ajuste no tamanho da fonte */
+        }
+
+        button.voltar {
+            width: 100%; /* Faz o botão de voltar ocupar toda a largura */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .titulo {
+            font-size: 1.2em; /* Reduzindo o tamanho do título */
+        }
+
+        .conteudo {
+            padding: 10px; /* Menos padding em telas muito pequenas */
+        }
+
+        .carrossel {
+            width: 100%; /* Carrossel ocupa toda a tela */
+            margin-top: 10px;
+        }
+
+        .carrossel img {
+            width: 100%; /* Ajustando para que as imagens fiquem responsivas */
+        }
+    }
+
 </style>
 
-    <div class="botao-voltar">
-        <a href="{% url 'espetaculos' %}">
-            <button class="voltar">Voltar</button>
-        </a>
+<div class="botao-voltar">
+    <a href="{% url 'espetaculos' %}">
+        <button class="voltar">Voltar</button>
+    </a>
+</div>
+
+
+<div class="conteudo">
+    <div class="imagem">
+        <img src="{% static 'img/mundoimaginario.jpg' %}" alt="Cartaz do Espetáculo" />
     </div>
-
-    <div class="titulo">O Mundo Imaginário</div>
-
-    <div class="conteudo">
-        <div class="imagem">
-            <img src="{% static 'img/mundoimaginario.jpg' %}" alt="Cartaz do Espetáculo" />
-        </div>
-        <div class="texto">
-            <p>Criado por Beto Paschoal em 2011, O Mundo Imaginário conta com repertório composto em parcerias com Lula Barbosa, Nilton Célio e Nando de Paula. Em cena, Beto é acompanhado pela atriz e cantora Lais Böker, com direção cênica de Ana Paula Navarro.</p>
-            <p>O show trata de assuntos como ecologia e a relação das crianças com os animais, de forma lúdica e divertida ao som de músicas contagiantes e de fácil memorização. O espetáculo já foi apresentado nas unidades do SESC de Itaquera, Sorocaba e Taubaté, em escolas, por meio de parcerias em todo o estado, além de em teatros e espaços públicos, por meio de parcerias com governos municipais de São Bernardo do Campo, São Caetano, Mauá, São Sebastião, Jacareí, Cruzeiro, Paraibúna e outras.</p>
-        </div>
+    <div class="texto">
+        <div class="titulo">O Mundo Imaginário</div>
+        <p>Criado por Beto Paschoal em 2011, O Mundo Imaginário conta com repertório composto em parcerias com Lula Barbosa, Nilton Célio e Nando de Paula. Em cena, Beto é acompanhado pela atriz e cantora Lais Böker, com direção cênica de Ana Paula Navarro.</p>
+        <br><p>O show trata de assuntos como ecologia e a relação das crianças com os animais, de forma lúdica e divertida ao som de músicas contagiantes e de fácil memorização. O espetáculo já foi apresentado nas unidades do SESC de Itaquera, Sorocaba e Taubaté, em escolas, por meio de parcerias em todo o estado, além de em teatros e espaços públicos, por meio de parcerias com governos municipais de São Bernardo do Campo, São Caetano, Mauá, São Sebastião, Jacareí, Cruzeiro, Paraibúna e outras.</p>
     </div>
+</div>
 
-    <div class="carrossel">
-        <img src="{% static 'img/terra.jpg' %}" alt="Imagem 1" class="active">
-        <img src="{% static 'img/aranha.jpg' %}" alt="Imagem 2">
-        <img src="{% static 'img/abelha.jpg' %}" alt="Imagem 3">
-        <img src="{% static 'img/carangueijo.jpg' %}" alt="Imagem 4">
-        <img src="{% static 'img/cachorro.jpg' %}" alt="Imagem 5">
-        <div class="legenda">Planeta Terra</div>
-        <div class="legenda" style="display: none;">Aranha</div>
-        <div class="legenda" style="display: none;">Abelha</div>
-        <div class="legenda" style="display: none;">Carangueijo</div>
-        <div class="legenda" style="display: none;">Vira-Lata</div>
+<div class="carrossel">
+    <img src="{% static 'img/terra.jpg' %}" alt="Imagem 1" class="active">
+    <img src="{% static 'img/aranha.jpg' %}" alt="Imagem 2">
+    <img src="{% static 'img/abelha.jpg' %}" alt="Imagem 3">
+    <img src="{% static 'img/carangueijo.jpg' %}" alt="Imagem 4">
+    <img src="{% static 'img/cachorro.jpg' %}" alt="Imagem 5">
+    <div class="legenda">Planeta Terra</div>
+    <div class="legenda" style="display: none;">Aranha</div>
+    <div class="legenda" style="display: none;">Abelha</div>
+    <div class="legenda" style="display: none;">Carangueijo</div>
+    <div class="legenda" style="display: none;">Vira-Lata</div>
 
-        <button class="prev">Anterior</button>
-        <button class="next">Próximo</button>
-    </div>
+    <button class="prev">Anterior</button>
+    <button class="next">Próximo</button>
+</div>
 
 <script>
     let currentIndex = 0;
@@ -174,4 +210,4 @@
     updateCarousel();
 </script>
 
-{%endblock %}
+{% endblock %}

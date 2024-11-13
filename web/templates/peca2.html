@@ -3,23 +3,13 @@
 {% block content %}
 
 <style>
-    body {
-        font-family: sans-serif;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #ecbc57; 
-        color: #000000;
-        padding: 0;
-    }
-
-    div.botao-voltar{
+    /* Estilos gerais */
+    div.botao-voltar {
         width: 100%;
         text-align: center;
     }
 
-    button.voltar{
+    button.voltar {
         padding: 10px 20px;
         background-color: #3050dc;
         margin-top: 10px;
@@ -32,22 +22,7 @@
     }
 
     .voltar:hover {
-        background-color: #00FFFF;
-    }
-
-    .conteudo {
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: space-between; 
-        align-items: flex-start;
-        width: 50%;
-        margin: 20px 0;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: rgb(218, 226, 221, 0.5); 
-        border: 1px solid #1e8ec6; 
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        color: #000000; 
+        background-color: yellow;
     }
 
     .titulo {
@@ -57,12 +32,27 @@
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
         margin-bottom: 20px; 
         width: 100%; 
-        text-align: left; 
+        text-align: center;
+    }
+
+    .conteudo {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        align-items: flex-start;
+        width: 60%;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(218, 226, 221, 0.5); 
+        border: 1px solid #1e8ec6; 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        color: #000000; 
     }
 
     .imagem {
         width: 45%;
-        margin-right: 20px; 
+
     }
 
     .imagem img {
@@ -75,25 +65,62 @@
     .texto {
         width: 50%;
         text-align: justify;
+        font-size: 1em;
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+        .conteudo {
+            flex-direction: column; /* Mudando para coluna em telas menores */
+            align-items: center; /* Alinhando centralmente */
+            width: 100%; /* Faz a largura da div ser 100% */
+        }
+
+        .imagem, .texto {
+            width: 100%; /* Faz as colunas ocuparem 100% da largura */
+            margin-bottom: 20px;
+        }
+
+        .titulo {
+            font-size: 1.5em; /* Ajuste no tamanho do título */
+        }
+
+        button.voltar {
+            width: 100%; /* Faz o botão de voltar ocupar toda a largura */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .titulo {
+            font-size: 1.2em; /* Reduzindo o tamanho do título */
+        }
+
+        .conteudo {
+            padding: 10px; /* Menos padding em telas muito pequenas */
+        }
+
+        .imagem img {
+            width: 100%; /* Ajustando para que as imagens fiquem responsivas */
+        }
     }
 
 </style>
 
-    <div class="botao-voltar">
-        <a href="{% url 'espetaculos' %}">
-            <button class="voltar">Voltar</button>
-        </a>
-    </div>
+<div class="botao-voltar">
+    <a href="{% url 'espetaculos' %}">
+        <button class="voltar">Voltar</button>
+    </a>
+</div>
 
-    <div class="conteudo">
+<div class="conteudo">
+    <div class="imagem">
+        <img src="{% static 'img/sos.jpg' %}" alt="Cartaz do Espetáculo" />
+    </div>
+    <div class="texto">
         <div class="titulo">SOS Natureza</div> <!-- Título posicionado dentro da div e centralizado -->
-        <div class="imagem">
-            <img src="{% static 'img/sos.jpg' %}" alt="Cartaz do Espetáculo" />
-        </div>
-        <div class="texto">
-            <p>O espetáculo propõe despertar a sensibilização do público infantil para questões ligadas à proteção dos animais exóticos que estão em extinção, de uma forma lúdica, utilizando canções de fácil memorização e que incentivam a conscientização. As apresentações criam um ambiente envolvente para que as crianças compreendam o valor da biodiversidade e a importância da preservação ambiental.</p>
-            <p>Em um espetáculo encantador e educativo, cada cena busca não só entreter, mas também oferecer um momento de reflexão sobre a fauna e flora do nosso planeta, promovendo atitudes sustentáveis desde a infância.</p>
-        </div>
+        <p>O espetáculo propõe despertar a sensibilização do público infantil para questões ligadas à proteção dos animais exóticos que estão em extinção, de uma forma lúdica, utilizando canções de fácil memorização e que incentivam a conscientização. As apresentações criam um ambiente envolvente para que as crianças compreendam o valor da biodiversidade e a importância da preservação ambiental.</p>
+        <br><p>Em um espetáculo encantador e educativo, cada cena busca não só entreter, mas também oferecer um momento de reflexão sobre a fauna e flora do nosso planeta, promovendo atitudes sustentáveis desde a infância.</p>
     </div>
+</div>
 
-{%endblock %}
+{% endblock %}

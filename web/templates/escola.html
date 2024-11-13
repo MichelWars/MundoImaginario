@@ -36,8 +36,8 @@
     }
 
     .foto-card img {
-        width: 350px;
-        height: 250px;
+        width: 100%;
+        height: 35vh;
         object-fit: cover; 
     }
 
@@ -53,7 +53,7 @@
     }
 
     .modal {
-        display: none; /* Oculto por padrão */
+        display: none;
         position: fixed;
         z-index: 1;
         left: 0;
@@ -106,23 +106,46 @@
         right: 10px;
     }
 
+    /* Responsividade para tablets */
     @media (max-width: 768px) {
         .foto-grid {
             grid-template-columns: repeat(2, 1fr);
         }
     }
 
+    /* Responsividade para celulares */
+    @media (max-width: 480px) {
+        .foto-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .container h1 {
+            font-size: 1.5rem;
+        }
+
+        .foto-card h2 {
+            font-size: 1.2rem;
+        }
+
+        .arrow {
+            font-size: 24px;
+        }
+
+        .close {
+            font-size: 30px;
+        }
+    }
+
     .container {
-        background-color: rgb(158, 0, 179,0.5);
+        background-color: rgba(158, 0, 179, 0.5);
         margin: 5px;
         border-radius: 1%;
-  }
+    }
 
     h2 {
         text-align: center;
         font-family: cursive;
         color: purple;
-        text-transform: initial;
         text-transform: capitalize;
     }
 
@@ -132,7 +155,6 @@
         color: yellow;
     }
 </style>
-
 
 <div class="container">
 <h1>Fotos em escolas</h1>
@@ -156,6 +178,7 @@
         <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
     </div>
 </div>
+
 <script>
     const images = [
     {% for foto in escola %}
@@ -168,35 +191,28 @@
     
     let currentIndex = 0;
     
-    // Função para abrir o modal e exibir a imagem e legenda
     function openModal(index) {
         currentIndex = index;
         updateModal();
         document.getElementById("myModal").style.display = "block";
     }
     
-    // Função para fechar o modal
     function closeModal() {
         document.getElementById("myModal").style.display = "none";
     }
     
-    // Função para atualizar a imagem e legenda no modal
     function updateModal() {
         document.getElementById("modal-image").src = images[currentIndex].url;
         document.getElementById("modal-caption").textContent = images[currentIndex].caption;
     }
     
-    // Função para mudar a imagem
     function changeImage(direction) {
         currentIndex += direction;
-        
-        // Verificar limites
         if (currentIndex < 0) {
-            currentIndex = images.length - 1; // Volta para a última imagem
+            currentIndex = images.length - 1;
         } else if (currentIndex >= images.length) {
-            currentIndex = 0; // Volta para a primeira imagem
+            currentIndex = 0;
         }
-        
         updateModal();
     }
 </script>

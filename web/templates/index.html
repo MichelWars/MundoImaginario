@@ -2,70 +2,99 @@
 {% block content %}
 {% load static %}
 
-
 <style>
-    
-    h1.index{
-        color: rgb(0, 0, 0);
-        width: 80%;
-        font-size: 28px;
+    /* Estilo para o título */
+    h1.index {
+        color: yellow;
+        width: 100%;
+        max-width: 800px;
+        font-size: 1.2rem;
         text-align: center;
         font-family: cursive;
-        color: yellow;
+        margin: 20px auto;
     }
     
-    p{
+    /* Parágrafo com borda ao redor do texto */
+    p {
         color: yellow;
         font-family: cursive;
         font-weight: bold;
-        -webkit-text-stroke-width: 2px; /* largura da borda */
-        -webkit-text-stroke-color: orangered /* cor da borda */
-        
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: orangered;
+        text-align: center;
+        margin: 15px 0;
     }
-    
-    div.iframe{
-        display: block;
-        justify-content: center; /* Centraliza horizontalmente */
+
+    /* Centralização e dimensionamento para contêiner */
+    div.container {
+        width: 90%;
+        max-width: 800px;
+        background-color: rgba(158, 0, 179, 0.5);
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Estilo responsivo para os iframes */
+    iframe {
+        border-radius: 12px;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    /* Estilo para o logotipo */
+    .index img {
+        width: auto;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    /* Alinhamento e responsividade da área do iframe */
+    div.iframe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Ajustes de responsividade */
+    @media (max-width: 768px) {
+        h1.index {
+            font-size: 1.5rem;
         }
         
-    div.container{
-        width: 50%;
-        background-color: rgb(158, 0, 179, 0.5);
-        margin: 5px;
-        border-radius: 10px;
+        div.container {
+            padding: 15px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: auto;
+        }
     }
+</style>
 
-
-    
-        
-    </style>
-    
-    <div class="container">
-    
-    
-    
-        <h1 class="index">
-            <div>
-                <img src="{% static 'img/logoMI.webp' %}" alt="logo" >
-            </div>
-            O Mundo Imaginário é um musical cênico infantil que
-            trata questões ligadas a conservação do meio ambiente, 
-            diversidade, ecologia e a importância da imaginação 
-            por meio de canções divertidas e de fácil memorização.
-        </h1>
-
-        <p><br>Assista ao teaser do espetáculo:<br></p>
-        
-        
-        <iframe style="border-radius:12px; margin: 10 auto;" width="695" height="400" src="https://www.youtube.com/embed/uDlM52OhPrM?si=h9YuCoVXCvtBu61X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-       
-       
-        <p><br>Conheça nossas musicas:<br></p>
-        <div class="iframe">
-            <iframe style="border-radius:12px; margin: 10 auto;" src="https://open.spotify.com/embed/album/3Kb8mnY1vkZYnEN4ssOyDs?utm_source=generator&theme=0" width="700" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            
+<div class="container">
+    <h1 class="index">
+        <div>
+            <img src="{% static 'img/logoMI.webp' %}" alt="logo">
         </div>
+        O Mundo Imaginário é um musical cênico infantil que
+        trata questões ligadas à conservação do meio ambiente, 
+        diversidade, ecologia e a importância da imaginação 
+        por meio de canções divertidas e de fácil memorização.
+    </h1>
 
+    <p><br>Assista ao teaser do espetáculo:<br></p>
+    
+    <iframe width="695" height="400" src="https://www.youtube.com/embed/uDlM52OhPrM?si=h9YuCoVXCvtBu61X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   
+    <p><br>Conheça nossas músicas:<br></p>
+    
+    <div class="iframe">
+        <iframe src="https://open.spotify.com/embed/album/3Kb8mnY1vkZYnEN4ssOyDs?utm_source=generator&theme=0" width="700" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
+</div>
 
 {% endblock %}

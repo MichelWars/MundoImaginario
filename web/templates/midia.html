@@ -1,297 +1,250 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <style>
+    h1.title {
+        text-align: center;
+        font-family: cursive;
+        color: yellow;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        margin: 0 auto;
+        overflow: hidden;
+    }
     
-
-        h1.title {
-            text-align: center;
-            font-family: cursive;
-            color: yellow;
-        }
-
-        .carousel-container {
-            position: relative;
-            width: 560px;
-            height: 315px;
-            margin: 0 auto;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .carousel-videos {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            z-index:1;
-
-        }
-        .carousel-videos iframe {
-            width: 560px;
-            height: 315px;
-            border: none;
-            display: none; /* Esconder todos os vídeos por padrão */
-            z-index:1;
-
-        }
-        .carousel-videos iframe.active {
-            display: block; /* Apenas o vídeo ativo será visível */
-            z-index:1;
-
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 24px;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .arrow.left {
-            left: 0;
-            z-index: 2;
-        }
-        .arrow.right {
-            right: 0;
-            z-index: 2;
-        }
-
-        .prev {
-            left: 10px;
-        }
+    .carousel-videos {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
     
-        .next {
-            right: 10px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-       
-        h2 {
-            color: purple;
-            text-transform: initial;
-            text-transform: capitalize;
-        }
-       
-        .foto-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 20px;
-        }
-       
-          .foto-card {
-            background-color: #e3e1e1;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: all 0.3s ease;
-          }
-       
-          .foto-card:hover {
-              cursor: pointer;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-              transform: translateY(-2px);
-            }
-           
-            .foto-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-       
-        .foto-card h3 {
-            font-size: 20px;
-            margin-top: 10px;
-              margin-bottom: 5px;
-          }
-         
-          .foto-card h2 {
-            font-size: 1.5rem;
-            margin: 10px;
-        }
-       
-        .foto-card p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-
-        .modal {
-            display: none; /* Oculto por padrão */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-    
-        .modal-content {
-            margin: 10% auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-        }
-    
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-    
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            color: #fff;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-       
-        @media (max-width: 768px) {
-            .foto-grid {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-
-        .container {
-              background-color: rgb(158, 0, 179,0.5);
-              margin: 5px;
-              border-radius: 1%;
-        }
+    .carousel-videos iframe {
+        width: 100%;
+        height: 45vh;
         
+        border: none;
+        display: none;
+    }
+    
+    .carousel-videos iframe.active {
+        display: block;
+    }
+    
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 2rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .arrow.left {
+        left: 0;
+    }
+    
+    .arrow.right {
+        right: 0;
+    }
+    
+    .foto-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 20px;
+    }
+
+    .foto-card {
+        background-color: #e3e1e1;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .foto-card:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+    }
+    
+    .foto-card img {
+        width: 100%;
+        height: 35vh;
+        object-fit: cover; 
+    }
+
+    .foto-card h2 {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow: auto;
+    }
+    
+    .modal-content {
+        margin: 5% auto;
+        display: block;
+        width: 90%;
+        max-width: 700px;
+        text-align: center;
+    }
+    
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-container {
+            width: 90%;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            padding: 0.3rem;
+        }
+    }
+
+    .container {
+        background-color: rgba(158, 0, 179, 0.5);
+        margin: 5px;
+        border-radius: 5px;
+        padding: 10px;
+    }
 </style>
 
-
 <div class="container">
-<h1 class="title">Balaio D'Arte na Midia</h1>
+    <h1 class="title">Balaio D'Arte na Mídia</h1>
 
-
-<div class="carousel-container"><!-- Playlist de Videos -->
-    <div class="carousel-videos" id="videoCarousel">
-        {% for video in video %}
-            <iframe id="{{ video.id }}" class="{% if forloop.first %}active{% endif %}" src="{{video.link}}?enablejsapi=1&rel=0&wmode=transparent" title="{{video.titulo}}" allow="autoplay; encrypted-media"></iframe>
-        {%endfor%}
-        
+    <div class="carousel-container">
+        <div class="carousel-videos" id="videoCarousel">
+            {% for video in video %}
+                <iframe id="{{ video.id }}" class="{% if forloop.first %}active{% endif %}" src="{{video.link}}?enablejsapi=1&rel=0&wmode=transparent" title="{{video.titulo}}" allow="autoplay; encrypted-media"></iframe>
+            {% endfor %}
+        </div>
+        <div class="arrow left" onclick="prevVideo()">&#10094;</div>
+        <div class="arrow right" onclick="nextVideo()">&#10095;</div>
     </div>
-    <div class="arrow left" onclick="prevVideo()">&#10094;</div>
-    <div class="arrow right" onclick="nextVideo()">&#10095;</div>
-</div>
 
+    <div class="foto-grid">
+        {% for foto in midia %}
+            <div class="foto-card" onclick="openModal({{ forloop.counter0 }})">
+                <img src="{{ foto.imagem.url }}" alt="{{ foto.legenda }}">
+                <h2>{{ foto.legenda }}</h2>
+            </div>
+        {% endfor %}
+    </div>
 
-<div class="foto-grid"><!-- Carrega grade de fotos -->
-    {% for foto in midia %}
-        <div class="foto-card"onclick="openModal({{ forloop.counter0 }})">
-                <img src="{{foto.imagem.url}}" alt="{{ foto.legenda }}">
-                <h2>{{foto.legenda}}</h2>
-         </div>
-    {%endfor%}
-</div>
-
-<div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <span class="arrow prev" onclick="changeImage(-1)">&#10094;</span>
-        <img id="modal-image" src="" alt="">
-        <h2 id="modal-caption"></h2>
-        <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <span class="arrow prev" onclick="changeImage(-1)">&#10094;</span>
+            <img id="modal-image" src="" alt="">
+            <h2 id="modal-caption"></h2>
+            <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
+        </div>
     </div>
 </div>
-</div>
+
 <script>
     let currentVideo = 0;
     const videoFrames = document.querySelectorAll('.carousel-videos iframe');
     
-    // Função para parar o vídeo em execução
     function pauseVideo(video) {
         video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
-    
-    // Função para iniciar o próximo vídeo
+
     function playVideo(video) {
-            video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    }
+
+    function showVideo(index) {
+        const totalVideos = videoFrames.length;
+        if (index >= totalVideos) {
+            currentVideo = 0;
+        } else if (index < 0) {
+            currentVideo = totalVideos - 1;
+        } else {
+            currentVideo = index;
         }
         
-        function showVideo(index) {
-            const totalVideos = videoFrames.length;
-            
-            if (index >= totalVideos) {
-                currentVideo = 0; // volta ao início
-            } else if (index < 0) {
-                currentVideo = totalVideos - 1; // vai para o último
-            } else {
-                currentVideo = index;
-            }
-            
-            // Pausar o vídeo atual
-            videoFrames.forEach(video => video.classList.remove('active'));
-            pauseVideo(videoFrames[currentVideo]);
-    
-            // Mostrar o próximo vídeo e reproduzir automaticamente
-            videoFrames[currentVideo].classList.add('active');
-            playVideo(videoFrames[currentVideo]);
-        }
-    
-        function nextVideo() {
-            pauseVideo(videoFrames[currentVideo]);
-            showVideo(currentVideo + 1);
-        }
+        videoFrames.forEach(video => video.classList.remove('active'));
+        pauseVideo(videoFrames[currentVideo]);
         
-        function prevVideo() {
-            pauseVideo(videoFrames[currentVideo]);
-            showVideo(currentVideo - 1);
-        }
-        
-        //js para fotos
-        const images = [
-        {% for foto in midia %}
-        {
-            url: "{{ foto.imagem.url }}",
-            caption: "{{ foto.legenda }}"
-            }{% if not forloop.last %},{% endif %}
-            {% endfor %}
-            ];
-            
-            let currentIndex = 0;
-            
-            // Função para abrir o modal e exibir a imagem e legenda
-            function openModal(index) {
-                currentIndex = index;
-                updateModal();
-        document.getElementById("myModal").style.display = "block";
+        videoFrames[currentVideo].classList.add('active');
+        playVideo(videoFrames[currentVideo]);
+    }
+
+    function nextVideo() {
+        pauseVideo(videoFrames[currentVideo]);
+        showVideo(currentVideo + 1);
     }
     
-    // Função para fechar o modal
+    function prevVideo() {
+        pauseVideo(videoFrames[currentVideo]);
+        showVideo(currentVideo - 1);
+    }
+
+    const images = [
+    {% for foto in midia %}
+        { url: "{{ foto.imagem.url }}", caption: "{{ foto.legenda }}" }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+    ];
+    let currentIndex = 0;
+
+    function openModal(index) {
+        currentIndex = index;
+        updateModal();
+        document.getElementById("myModal").style.display = "block";
+    }
+
     function closeModal() {
         document.getElementById("myModal").style.display = "none";
     }
-    
-    // Função para atualizar a imagem e legenda no modal
+
     function updateModal() {
         document.getElementById("modal-image").src = images[currentIndex].url;
         document.getElementById("modal-caption").textContent = images[currentIndex].caption;
     }
-    
-    // Função para mudar a imagem
+
     function changeImage(direction) {
         currentIndex += direction;
-    
-        // Verificar limites
         if (currentIndex < 0) {
-            currentIndex = images.length - 1; // Volta para a última imagem
+            currentIndex = images.length - 1;
         } else if (currentIndex >= images.length) {
-            currentIndex = 0; // Volta para a primeira imagem
+            currentIndex = 0;
         }
-        
         updateModal();
     }
 </script>

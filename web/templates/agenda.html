@@ -1,83 +1,95 @@
 {% extends "base.html" %}
 {% block content %}
 
+<style>
+    main h1 {
+        text-align: center;
+        font-family: cursive;
+        color: yellow;
+        -webkit-text-stroke-width: 2px; /* largura da borda */
+        -webkit-text-stroke-color: rgb(128, 0, 128,0.5) /* cor da borda */
+    }
 
+    table {
+        margin-top: 50px;
+        width: 70%;
+        border-collapse: collapse; /* Colapsa as bordas das células */
+        border-spacing: 0; /* Remove o espaçamento entre as células */
+        margin: 0 auto; /* Centraliza a tabela */
+    }
 
-    
-    <style>
+    th {
+        background-color: rgb(158, 0, 179, 0.5);
+        color: yellow;
+        font-family: 'Pacifico';
+        font-weight: bold;
+        font-style: italic;
+        font-size: 30px;
+    }
+
+    td, th {
+        padding: 5px 10px;
+        text-align: center;
+        border: 2px solid green;
+    }
+
+    td {
+        background-color: rgb(181, 11, 203, 0.5);
+        color: yellow;
+        font-family: cursive;
+        font-weight: bold;
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+        table {
+            width: 90%; /* Aumenta a largura da tabela em telas menores */
+        }
+
+        th, td {
+            font-size: 18px; /* Ajusta o tamanho da fonte para telas médias */
+            padding: 8px; /* Aumenta o padding para maior legibilidade */
+        }
 
         main h1 {
-            text-align: center;
-            font-family: cursive;
-            color: yellow;
-            -webkit-text-stroke-width: 2px; /* largura da borda */
-            -webkit-text-stroke-color: rgb(128, 0, 128,0.5) /* cor da borda */
+            font-size: 1.8em; /* Ajusta o tamanho do título em telas médias */
         }
-        
+    }
+
+    @media (max-width: 480px) {
         table {
-            
-            margin-top: 50px;
-            width: 70%;
-            border-collapse: collapse; /* Colapsa as bordas das células */
-            border-spacing: 0; /* Remove o espaçamento entre as células */
-            
-          
-        }
-        
-        th {
-            background-color: rgb(158, 0, 179, 0.5);
-            color: yellow;
-            font-family: 'Pacifico';
-            font-weight: bold;
-            font-style: italic;
-            font-size: 30px;
+            width: 100%; /* Faz a tabela ocupar 100% da largura */
         }
 
-        td,th {
-            padding: 5px 10px;
-            text-align: center;
-            border: 2px solid green;
-            
+        th, td {
+            font-size: 14px; /* Reduz o tamanho da fonte em telas pequenas */
+            padding: 6px; /* Ajuste no padding */
         }
 
-        td {
-            background-color:rgb(181, 11, 203, 0.5);
-            color: yellow;
-            font-family: cursive;
-            font-weight: bold;
-
+        main h1 {
+            font-size: 1.5em; /* Reduz o tamanho do título em telas pequenas */
         }
+    }
+</style>
 
+<h1>Agenda Balaio D'Arte</h1>
 
-        </style>
+<table>
+    <tr>
+        <th>Data</th>
+        <th>Horario</th>
+        <th>Local</th>
+        <th>Descrição</th>
+    </tr>
 
-
-
-
-
-
-    <h1>Agenda Balaio D'Arte</h1>
-  
- 
-    <table>
-        <tr>
-            <th>Data</th>
-            <th>Horario</th>
-            <th>Local</th>
-            <th>Descrição</th>
-        </tr>
-
-        <tr>
-            {% for agenda in agenda %}
+    <tr>
+        {% for agenda in agenda %}
             <td>{{agenda.data}}</td>
             <td>{{agenda.horario}}</td>
             <td>{{agenda.local}}</td>
             <td>{{agenda.descricao}}</td>
-
         </tr>
         {% endfor %}
-    </table>
+</table>
 
-        {% endblock %}
-
-    
+{% endblock %}
