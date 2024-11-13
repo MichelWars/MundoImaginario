@@ -28,7 +28,7 @@
 
 <style>
     main {
-        font-family: Arial, sans-serif;
+        font-family:cursive;
         margin: 0;
         padding: 0;
         color: #333;
@@ -41,9 +41,9 @@
 
     section {
         padding: 40px;
-        max-width: 1000px;
-        margin: 20px auto;
-        background-color: rgb(158, 0, 179);
+        width: 1100px;
+        margin: 20px 0px 1px 0px;
+        background-color: rgb(158, 0, 179, 0.5);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 1%;
     }
@@ -51,7 +51,7 @@
     p {
         line-height: 1.6;
         font-size: 1.1em;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         color: yellow;
     }
 
@@ -61,7 +61,7 @@
     }
 
     .cta {
-        background-color: #e67e22;
+        background-color: rgb(228, 126, 35, 0.5);
         color: white;
         padding: 15px;
         text-align: center;
@@ -70,10 +70,11 @@
     }
 
     span img.thumbnail {
-        width: 300px;
-        height: 300;
+        width: auto;
+        height: 250;
         margin-right: 5px;
         cursor: pointer;
+        border-radius: 1%;
     }
 
     /* Modal Styling */
@@ -132,6 +133,25 @@
     .navigation .next {
         right: 10px;
     }
+
+#eq {
+    margin-bottom: 0px;
+    padding: 0px;
+    color: yellow;
+    font-size: 30px;
+    -webkit-text-stroke-width: 2px; /* largura da borda */
+    -webkit-text-stroke-color: green; /* cor da borda */
+}
+
+.fotos {
+    background-color:rgb(158, 0, 179, 0.5);
+    height:auto;
+    border-radius:10px;
+    width: 1100px;
+    margin-bottom: 10px;
+    padding: 0px 40px 0px 40px;
+}
+
 </style>
 
 <img src="{% static 'img/Logo Balaio.png' %}" alt="Logo Mundo Imaginário - Balaio da Arte">
@@ -144,17 +164,18 @@
 
     <div class="cta">
         <p>Venha fazer parte do Mundo Imaginário com a gente! Acompanhe nossos espetáculos e atividades!</p>
-    </div>
+    </div>  
 </section>
-
-
-<span>Nossa Equipe</span>
-<!-- Miniaturas das Imagens -->
-<span>
-    <img src="{% static 'img/qs1.jpg' %}" alt="" class="thumbnail" onclick="openModal(0)">
-    <img src="{% static 'img/qs2.jpg' %}" alt="" class="thumbnail" onclick="openModal(1)">
-    <img src="{% static 'img/qs3.jpg' %}" alt="" class="thumbnail" onclick="openModal(2)">
-</span>
+<div class="fotos">
+    <p id="eq">Nossa Equipe:</p>
+    <span>
+        <!-- Miniaturas das Imagens -->
+        <img src="{% static 'img/qs1.jpg' %}" alt="" class="thumbnail" onclick="openModal(0)">
+        <img src="{% static 'img/qs2.jpg' %}" alt="" class="thumbnail" onclick="openModal(1)">
+        <img src="{% static 'img/qs3.jpg' %}" alt="" class="thumbnail" onclick="openModal(2)">
+    </span>
+</div>
+    
 
 <!-- Modal para Visualização Expandida -->
 <div id="imageModal" class="modal-overlay">

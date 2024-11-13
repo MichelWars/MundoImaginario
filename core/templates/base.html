@@ -2,7 +2,7 @@
 
 <style>
     main {
-        background-image: url("{% static 'img/f1.webp' %}"); /* Certifique-se de que o caminho esteja correto */
+        background-image: url("{% static 'img/baleia.png' %}"); /* Certifique-se de que o caminho esteja correto */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -18,8 +18,8 @@
     }
 
     header {
-        background-image: url("{% static 'img/f1.webp' %}"); /* Certifique-se de que o caminho esteja correto */
-        background-size: cover;
+        background-image: url("{% static 'img/baleia.png' %}"); /* Certifique-se de que o caminho esteja correto */
+        background-size:cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -35,18 +35,19 @@
 
     nav{/*Efeitos da caixa de navegação */
         width: 100%;
-        background-color: #0055ff;
+        background-color:  #00aeff;
         padding: 10px;/*define espaço entre o texto e as 3 bordas(left,top,bottom) */
         box-sizing: border-box;
         font-family: 'Pacifico', cursive;
         display: flex;/*cria um display flexivel para usar a função align-items*/
         align-items: center;/* define o espaço entre os itens (centralziado)*/
         z-index:10;
+        
     
     }
     
     button.botao{
-        background-color: #0055ff;
+        background-color: #00aeff;
         color: white;
         border:none;
         font-family: 'Pacifico', cursive;
@@ -58,8 +59,8 @@
     footer{/*efeitos no rodapé */
         width: 100%;
         height: 35px;
-        background-color: #0055ff;
-        color: white
+        background-color: #00aeff;
+        color: black;
     }
     *{/* O asterisco indica que todos os campos seram afetados pelo comando */
         margin: 0px auto;/* define o espaço das margens em pixel */
@@ -105,7 +106,7 @@
     }
     div.menu a {
         display:block; /*Mostra os links um embaixo do outro*/
-        color:white;
+        color:green;
         text-decoration: none;
         padding: 5px 10px;
         font-size:20px;

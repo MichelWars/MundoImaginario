@@ -111,10 +111,30 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
+    .container {
+        background-color: rgb(158, 0, 179,0.5);
+        margin: 5px;
+        border-radius: 1%;
+  }
+
+    h2 {
+        text-align: center;
+        font-family: cursive;
+        color: purple;
+        text-transform: initial;
+        text-transform: capitalize;
+    }
+
+    .container h1 {
+        text-align: center;
+        font-family: cursive;
+        color: yellow;
+    }
 </style>
 
 
-
+<div class="container">
 <h1>Fotos em escolas</h1>
 
 <div class="foto-grid">
@@ -136,50 +156,50 @@
         <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
     </div>
 </div>
-
 <script>
     const images = [
-        {% for foto in escola %}
-            {
-                url: "{{ foto.imagem.url }}",
-                caption: "{{ foto.legenda }}"
-            }{% if not forloop.last %},{% endif %}
-        {% endfor %}
+    {% for foto in escola %}
+    {
+        url: "{{ foto.imagem.url }}",
+        caption: "{{ foto.legenda }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
     ];
-
+    
     let currentIndex = 0;
-
+    
     // Função para abrir o modal e exibir a imagem e legenda
     function openModal(index) {
         currentIndex = index;
         updateModal();
         document.getElementById("myModal").style.display = "block";
     }
-
+    
     // Função para fechar o modal
     function closeModal() {
         document.getElementById("myModal").style.display = "none";
     }
-
+    
     // Função para atualizar a imagem e legenda no modal
     function updateModal() {
         document.getElementById("modal-image").src = images[currentIndex].url;
         document.getElementById("modal-caption").textContent = images[currentIndex].caption;
     }
-
+    
     // Função para mudar a imagem
     function changeImage(direction) {
         currentIndex += direction;
-
+        
         // Verificar limites
         if (currentIndex < 0) {
             currentIndex = images.length - 1; // Volta para a última imagem
         } else if (currentIndex >= images.length) {
             currentIndex = 0; // Volta para a primeira imagem
         }
-
+        
         updateModal();
     }
 </script>
 
+</div>
 {% endblock %}

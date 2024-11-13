@@ -3,8 +3,12 @@
 
 
 <style>
+    
+
         h1.title {
             text-align: center;
+            font-family: cursive;
+            color: yellow;
         }
 
         .carousel-container {
@@ -66,7 +70,9 @@
         }
        
         h2 {
-            color: black;
+            color: purple;
+            text-transform: initial;
+            text-transform: capitalize;
         }
        
         .foto-grid {
@@ -156,11 +162,17 @@
               grid-template-columns: repeat(2, 1fr);
             }
           }
+
+        .container {
+              background-color: rgb(158, 0, 179,0.5);
+              margin: 5px;
+              border-radius: 1%;
+        }
         
 </style>
 
 
-
+<div class="container">
 <h1 class="title">Balaio D'Arte na Midia</h1>
 
 
@@ -194,7 +206,7 @@
         <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
     </div>
 </div>
-
+</div>
 <script>
     let currentVideo = 0;
     const videoFrames = document.querySelectorAll('.carousel-videos iframe');

@@ -7,8 +7,24 @@
         text-decoration: none;
     }
 
+    .container {
+        background-color: rgb(158, 0, 179,0.5);
+        margin: 5px;
+        border-radius: 1%;
+  }
+
     h2 {
-        color: black;
+        text-align: center;
+        font-family: cursive;
+        color: purple;
+        text-transform: initial;
+        text-transform: capitalize;
+    }
+
+    .container h1 {
+        text-align: center;
+        font-family: cursive;
+        color: yellow;
     }
 
     .foto-grid {
@@ -112,7 +128,7 @@
         }
     }
 </style>
-
+<div class="container"> 
 <h1>Fotos no Teatro</h1>
 
 <div class="foto-grid">
@@ -134,6 +150,9 @@
         <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
     </div>
 </div>
+
+</div>
+
 
 <script>
     const images = [

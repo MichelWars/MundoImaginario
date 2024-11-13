@@ -10,7 +10,7 @@
         flex-direction: column;
         align-items: center;
         background-color: #ffffff; 
-        color: #000000;
+        color: yellow;
         padding: 0;
     }
 
@@ -28,7 +28,7 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(178, 14, 14, 0.2);
     }
 
     .voltar:hover {
@@ -39,33 +39,26 @@
         display: flex;
         align-items: flex-start; 
         width: 50%;
-        height: 50%;
+        height: 100%;
         margin: 60px 0; /* Aumenta o espaço acima e abaixo da div */
         padding: 20px;
         border-radius: 10px;
-        background-color: #000000; 
+        background-color: rgb(158, 0, 179,0.5); 
         border: 1px solid #3c00ff; 
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        color: #ffffff; 
+        box-shadow: 0 8px 16px purple;
+        color: yellow; 
         position: relative; 
         flex-wrap: wrap;
+        font-family: cursive;
     }
 
-    .titulo-imagem {
-        position: absolute;
-        top: -50px; 
-        left: 50%; 
-        transform: translateX(-50%);
-        width: 40%; 
-        opacity: 0.8; 
-        z-index: 10;  
-    }
+
 
     .video-player {
         width: 30%; 
-        height: 100%;
+        height: auto;
         margin-right: 20px; 
-        border: 1px solid #3c00ff;
+        margin-top: 70px;
         border-radius: 10px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
@@ -73,6 +66,11 @@
     .texto {
         width: 55%; 
         text-align: justify;
+    }
+
+    .texto span {
+        text-align: center;
+        font-size: 40px;
     }
 </style>
 
@@ -83,17 +81,18 @@
 </div>
 
 <div class="conteudo">
-    <!-- Imagem transparente posicionada acima do conteúdo -->
-    <img src="{% static 'img/saltimbacos_logo.png' %}" alt="Brinquedos e Brincadeiras" class="titulo-imagem">
 
-    <!-- Player de vídeo dentro da div -->
+    
+    
     <video class="video-player" controls>
         <source src="{% static 'vid/saltimbacos.mp4' %}" type="video/mp4">
         Seu navegador não suporta o elemento de vídeo.
     </video>
 
     <div class="texto">
+        <span><h3> Os Saltimbacos</h3></span>
         <p>Um show que traz para as crianças o que elas mais gostam de fazer. Relembramos brincadeiras que marcaram época, que fazem parte do folclore musical infantil, sem deixar de lado as brincadeiras mais atuais. É um espetáculo super interativo que convida o público a se envolver nas atividades, dançar e cantar junto com os artistas no palco.</p>
+        <br>
         <p>A cada cena, uma nova brincadeira ganha vida, fazendo com que as crianças experimentem uma jornada pelos clássicos da infância e ainda aprendam novos jogos e músicas que divertem e educam ao mesmo tempo. Este espetáculo é uma celebração do universo infantil, proporcionando momentos inesquecíveis de aprendizado e diversão em grupo!</p>
     </div>
 </div>
