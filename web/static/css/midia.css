@@ -89,7 +89,7 @@
     .modal {
         display: none;
         position: fixed;
-        z-index: 1;
+        z-index: 10; /* Aumente para garantir que o modal fique sobre o carrossel */
         left: 0;
         top: 0;
         width: 100%;
@@ -122,6 +122,26 @@
         cursor: pointer;
     }
 
+    .modal-content .arrow {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 2rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 11; /* Garante que as setas fiquem visíveis sobre o conteúdo */
+    }
+
+    .modal-content .prev {
+        left: 2%; /* Posiciona a seta da esquerda */
+    }
+
+    .modal-content .next {
+        right: 2%; /* Posiciona a seta da direita */
+    }
+
     @media (max-width: 768px) {
         .carousel-container {
             width: 90%;
@@ -131,6 +151,10 @@
             font-size: 1.5rem;
             padding: 0.3rem;
         }
+
+        .foto-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     .container {
@@ -138,4 +162,27 @@
         margin: 5px;
         border-radius: 5px;
         padding: 10px;
+    }
+
+
+    @media (max-width: 480px) {
+        .foto-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .container h1 {
+            font-size: 1.5rem;
+        }
+
+        .foto-card h2 {
+            font-size: 1.2rem;
+        }
+
+        .arrow {
+            font-size: 24px;
+        }
+
+        .close {
+            font-size: 30px;
+        }
     }
