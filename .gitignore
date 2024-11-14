@@ -3,4 +3,4 @@
 __pycache__/
 *.yml
 db.sqlite3
-
+media
