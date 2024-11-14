@@ -1,0 +1,71 @@
+
+    /* Estilo para o título */
+    h1.index {
+        color: yellow;
+        width: 100%;
+        max-width: 800px;
+        font-size: 1.2rem;
+        text-align: center;
+        font-family: cursive;
+        margin: 20px auto;
+    }
+    
+    /* Parágrafo com borda ao redor do texto */
+    p {
+        color: yellow;
+        font-family: cursive;
+        font-weight: bold;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: orangered;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    /* Centralização e dimensionamento para contêiner */
+    div.container {
+        width: 90%;
+        max-width: 800px;
+        background-color: rgba(158, 0, 179, 0.5);
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Estilo responsivo para os iframes */
+    iframe {
+        border-radius: 12px;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    /* Estilo para o logotipo */
+    .index img {
+        width: auto;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    /* Alinhamento e responsividade da área do iframe */
+    div.iframe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Ajustes de responsividade */
+    @media (max-width: 768px) {
+        h1.index {
+            font-size: 1.5rem;
+        }
+        
+        div.container {
+            padding: 15px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: auto;
+        }
+    }

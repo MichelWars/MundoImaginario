@@ -1,0 +1,102 @@
+
+    /* Estilos gerais */
+    div.botao-voltar {
+        width: 100%;
+        text-align: center;
+    }
+
+    button.voltar {
+        padding: 10px 20px;
+        background-color: #3050dc;
+        margin-top: 10px;
+        color: #ffffff; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .voltar:hover {
+        background-color: yellow;
+    }
+
+    .titulo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #ffeb3b; 
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+        margin-bottom: 20px; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    .conteudo {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        align-items: flex-start;
+        width: 60%;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(218, 226, 221, 0.5); 
+        border: 1px solid #1e8ec6; 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        color: #000000; 
+    }
+
+    .imagem {
+        width: 45%;
+
+    }
+
+    .imagem img {
+        width: 100%;
+        height: auto;
+        border: 2px solid #000000;
+        border-radius: 10px;
+    }
+
+    .texto {
+        width: 50%;
+        text-align: justify;
+        font-size: 1em;
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+        .conteudo {
+            flex-direction: column; /* Mudando para coluna em telas menores */
+            align-items: center; /* Alinhando centralmente */
+            width: 100%; /* Faz a largura da div ser 100% */
+        }
+
+        .imagem, .texto {
+            width: 100%; /* Faz as colunas ocuparem 100% da largura */
+            margin-bottom: 20px;
+        }
+
+        .titulo {
+            font-size: 1.5em; /* Ajuste no tamanho do título */
+        }
+
+        button.voltar {
+            width: 100%; /* Faz o botão de voltar ocupar toda a largura */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .titulo {
+            font-size: 1.2em; /* Reduzindo o tamanho do título */
+        }
+
+        .conteudo {
+            padding: 10px; /* Menos padding em telas muito pequenas */
+        }
+
+        .imagem img {
+            width: 100%; /* Ajustando para que as imagens fiquem responsivas */
+        }
+    }
+

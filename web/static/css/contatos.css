@@ -1,0 +1,101 @@
+.corpo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  /* Garantir que os blocos se distribuam bem */
+    background-color: transparent;
+    width: 70%;
+    color: black;
+    -webkit-text-stroke-width: 0.1px; 
+    -webkit-text-stroke-color: yellow;
+    letter-spacing: 1px;
+    flex-wrap: wrap;  /* Adicionado para garantir que os blocos se movam para a próxima linha em telas pequenas */
+}
+
+.corpo span {
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 2px; 
+    -webkit-text-stroke-color: rgba(0, 255, 0, 0.5);
+}
+
+.bloco {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: transparent;
+    flex: 1;  /* Garantir que os blocos ocupem espaço proporcional */
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row; /* Ícone e texto na mesma linha */
+    margin-bottom: 10px;
+    margin-left: 1px;
+}
+
+.icon-container a {
+    display: flex;
+    align-items: center; /* Alinha o texto verticalmente ao centro do ícone */
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.icon-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.bloco p {
+    font-size: x-large;
+    font-weight: bold;
+    font-family: pacifico;
+}
+
+span:hover {
+    color: yellow;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .corpo {
+        width: 90%;
+        padding-left: 5%;
+        justify-content: space-between;  /* Para ajustar o espaço entre os blocos */
+    }
+
+    .bloco {
+        min-width: 45%; /* Ajusta a largura dos blocos para que fiquem lado a lado, mas com espaço */
+        margin-bottom: 20px; /* Adiciona espaço entre os blocos em telas menores */
+    }
+
+    .bloco p {
+        font-size: large;
+    }
+
+    .icon-container img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .corpo {
+        width: 100%;
+        padding-left: 0;
+        justify-content: center;  /* Centraliza os blocos em telas menores */
+    }
+
+    .bloco {
+        min-width: 100%;  /* Os blocos ocupam 100% da largura disponível */
+        margin-bottom: 15px;
+    }
+
+    .bloco p {
+        font-size: medium;
+    }
+
+    .icon-container img {
+        width: 70px;
+        height: 70px;
+    }
+}
