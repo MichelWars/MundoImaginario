@@ -67,6 +67,8 @@
         overflow: hidden;
         text-align: center;
         transition: all 0.3s ease;
+        color: purple;
+        font-family: cursive;
     }
 
     .foto-card:hover {
@@ -96,6 +98,8 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.8);
         overflow: auto;
+        color: purple;
+        font-family: cursive;
     }
     
     .modal-content {

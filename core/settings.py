@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mundoimaginario',
+        'USER': 'postgres',
+        'PASSWORD': 'uninove2024',
+        'HOST': 'localhost',
+        'PORT': '5432',
         'USE_TZ': True, 
         'TIME_ZONE': 'America/Sao_Paulo', 
     }
