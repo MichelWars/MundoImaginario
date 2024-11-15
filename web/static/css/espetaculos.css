@@ -47,7 +47,7 @@
     }
 
     .card {
-        width: 400px; /* Reduz a largura em 10% */
+        width: 80%; /* Reduz a largura em 10% */
         padding: 20px;
         border-radius: 5px;
         display: flex;
@@ -109,13 +109,13 @@
 
         .content-box {
             grid-template-columns: 1fr;
-            width: 100%;
+            width: 80%;
             align-items: center;
         }
 
         .card {
-            min-width: 20em;
-            margin: auto;
+            width: 80%;
+            margin: 1%;
         }
 
         
