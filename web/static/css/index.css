@@ -68,4 +68,11 @@
             width: 100%;
             height: auto;
         }
+
+        .index img {
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
     }
