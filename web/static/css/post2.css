@@ -115,3 +115,14 @@
         font-size: 10px;
         
     }
+    @media screen and (max-width: 768px) {
+        .post-content .image-text-container {
+            display: block; /* Empilha os elementos */
+            text-align: center; /* Centraliza os elementos */
+        }
+    
+        .post-content .image-text-container img {
+            max-width: 100%; /* Ajusta a largura da imagem à largura da div */
+            margin: 0 auto 10px auto; /* Centraliza a imagem e adiciona margem inferior */
+        }
+    }

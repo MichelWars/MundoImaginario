@@ -6,7 +6,7 @@
 
 
     .post-container {
-        max-width: 900px;
+        max-width: 70%;
         margin: 5px auto;
         padding: 10px 50px 0px 50px;
         background-color: #fff;
@@ -62,7 +62,8 @@
     }
 
     .post-content {
-        margin-top: 20px;
+        margin: 5px;
+        width: 100%;
     }
 
     .post-subtitle {
@@ -82,7 +83,7 @@
     }
 
     .post-content .image-text-container img {
-        max-width: 40%;
+        
         margin: 10px 20px 0px 20px;
         border-radius: 8px;
         object-fit: cover;
@@ -139,5 +140,36 @@
         text-align: center;
     }
 
+    .image-text-container .leg{
+        width: 100%;
+        
+    }
+
+    .image-text-container .leg img{
+        width: 500px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .post-container {
+            max-width: 90%; /* Ajusta a largura do container para 100% em dispositivos móveis */
+        }
+
+        .post-content .image-text-container {
+            display: block; /* Empilha os elementos */
+            text-align: center; /* Centraliza os elementos */
+        }
     
- 
+        .post-content .image-text-container img {
+            max-width: 100%; /* Ajusta a largura da imagem à largura da div */
+            margin: 0 auto 10px auto; /* Centraliza a imagem e adiciona margem inferior */
+        }
+        
+        .leg{
+            font-size: 0.1em;
+        }
+        
+    }
