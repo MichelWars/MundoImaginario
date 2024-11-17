@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mundoimaginario',
         'USER': 'postgres',
-        'PASSWORD': 'uninove2024',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
         'USE_TZ': True, 
