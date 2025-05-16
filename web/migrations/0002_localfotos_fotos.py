@@ -24,7 +24,13 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('legenda', models.CharField(max_length=200)),
                 ('imagem', models.ImageField(upload_to='web/')),
-                ('local', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='web.localfotos')),
+                (
+                    'local',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to='web.localfotos',
+                    ),
+                ),
             ],
         ),
     ]

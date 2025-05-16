@@ -20,12 +20,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+f!s=cny)bhx^)vheqhzwr0_g%qt-#elr&^4=pn-ulrx4(i17$'
+SECRET_KEY = (
+    'django-insecure-+f!s=cny)bhx^)vheqhzwr0_g%qt-#elr&^4=pn-ulrx4(i17$'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','50.17.38.108','http://www.omundoimaginario.blog.br','omundoimaginario.blog.br']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '50.17.38.108',
+    'http://www.omundoimaginario.blog.br',
+    'omundoimaginario.blog.br',
+]
 
 
 # Application definition
@@ -48,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -83,8 +90,8 @@ DATABASES = {
         'PASSWORD': 'uninove2024',
         'HOST': 'localhost',
         'PORT': '5432',
-        'USE_TZ': True, 
-        'TIME_ZONE': 'America/Sao_Paulo', 
+        'USE_TZ': True,
+        'TIME_ZONE': 'America/Sao_Paulo',
     }
 }
 
@@ -125,10 +132,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
-
-
-
 
 
 # Default primary key field type
